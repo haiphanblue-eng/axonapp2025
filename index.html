@@ -1,0 +1,3297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axon App — 2025 Achievements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --axon-yellow: #FFD700;
+            --axon-yellow-dark: #E6C200;
+            --axon-yellow-light: #FFE44D;
+            --axon-gold: #FFC107;
+            --axon-black: #0A0A0A;
+            --axon-black-light: #1A1A1A;
+            --axon-charcoal: #2A2A2A;
+            --axon-gray: #9A9A9A;
+            --axon-light: #F5F5F5;
+            --axon-white: #FFFFFF;
+            --axon-success: #FFD700;
+            --axon-accent: #FF9500;
+            --gradient-primary: linear-gradient(135deg, var(--axon-yellow) 0%, var(--axon-gold) 100%);
+            --gradient-dark: linear-gradient(180deg, var(--axon-black) 0%, #000000 100%);
+            --gradient-card: linear-gradient(145deg, rgba(42, 42, 42, 0.6) 0%, rgba(10, 10, 10, 0.8) 100%);
+            --shadow-glow: 0 0 60px rgba(255, 215, 0, 0.3);
+            --shadow-card: 0 25px 80px rgba(0, 0, 0, 0.5);
+            --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        *:focus {
+            outline: none;
+        }
+        
+        *:focus-visible {
+            outline: 2px solid var(--axon-yellow);
+            outline-offset: 2px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--axon-black);
+            color: var(--axon-white);
+            line-height: 1.6;
+        }
+
+        /* Navigation - Always visible and sticky */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1001;
+            padding: 0.875rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .nav-logo svg {
+            width: 36px;
+            height: 36px;
+        }
+
+        .nav-logo span {
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .nav-link {
+            color: var(--axon-gray);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 0.625rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s var(--transition-smooth);
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--axon-white);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-link.active {
+            color: var(--axon-yellow);
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 3rem;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-dark);
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 215, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 215, 0, 0.03) 1px, transparent 1px);
+            background-size: 80px 80px;
+            mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+        }
+
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            animation: orbFloat 20s ease-in-out infinite;
+        }
+
+        .hero-orb-1 {
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            animation-delay: 0s;
+        }
+
+        .hero-orb-2 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 193, 7, 0.12) 0%, transparent 70%);
+            bottom: -100px;
+            left: -100px;
+            animation-delay: -7s;
+        }
+
+        .hero-orb-3 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, transparent 70%);
+            top: 40%;
+            left: 30%;
+            animation-delay: -14s;
+        }
+
+        @keyframes orbFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.05); }
+            50% { transform: translate(-20px, 20px) scale(0.95); }
+            75% { transform: translate(20px, 10px) scale(1.02); }
+        }
+
+        .hero-particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--axon-yellow);
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: particleFloat 15s linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 1100px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--axon-yellow);
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s var(--transition-smooth) 0.2s forwards;
+        }
+
+        .hero-badge svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s var(--transition-smooth) 0.4s forwards;
+        }
+
+        .hero-title .app-name {
+            font-size: 0.6em;
+            display: block;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 0.95;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--axon-gray);
+            font-weight: 400;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s var(--transition-smooth) 0.6s forwards;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s var(--transition-smooth) 0.8s forwards;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-value {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.875rem;
+            color: var(--axon-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--axon-gray);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            opacity: 0;
+            animation: fadeIn 1s var(--transition-smooth) 1.2s forwards;
+        }
+
+        .hero-scroll-line {
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(to bottom, var(--axon-yellow), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.3; transform: scaleY(1); }
+            50% { opacity: 1; transform: scaleY(1.1); }
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Section Base Styles */
+        .section {
+            min-height: 100vh;
+            padding: 8rem 3rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--axon-yellow);
+            margin-bottom: 1rem;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--axon-yellow);
+            border-radius: 2px;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            font-size: 1.25rem;
+            color: var(--axon-gray);
+            max-width: 600px;
+        }
+
+        /* Feature Section Backgrounds */
+        .section-smart-capture {
+            background: linear-gradient(135deg, var(--axon-black) 0%, #111111 100%);
+        }
+
+        .section-ai-tagging {
+            background: linear-gradient(135deg, #111111 0%, var(--axon-black) 100%);
+        }
+
+        .section-capture-parity {
+            background: linear-gradient(135deg, var(--axon-black) 0%, #0D0D0D 100%);
+        }
+
+        .section-device-checkout {
+            background: linear-gradient(135deg, #0D0D0D 0%, var(--axon-black) 100%);
+        }
+
+        .section-minor-features {
+            background: var(--axon-black);
+        }
+
+        /* Feature Card Layout */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .feature-grid.reverse {
+            direction: rtl;
+        }
+
+        .feature-grid.reverse > * {
+            direction: ltr;
+        }
+
+        .feature-content {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: all 0.8s var(--transition-smooth);
+        }
+
+        .feature-content.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .feature-grid.reverse .feature-content {
+            transform: translateX(40px);
+        }
+
+        .feature-grid.reverse .feature-content.visible {
+            transform: translateX(0);
+        }
+
+        .feature-visual {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: all 0.8s var(--transition-smooth) 0.2s;
+        }
+
+        .feature-visual.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .feature-grid.reverse .feature-visual {
+            transform: translateX(-40px);
+        }
+
+        .feature-grid.reverse .feature-visual.visible {
+            transform: translateX(0);
+        }
+
+        /* Feature Stats */
+        .feature-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-stat {
+            flex: 1;
+        }
+
+        .feature-stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--axon-yellow);
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-stat-label {
+            font-size: 0.875rem;
+            color: var(--axon-gray);
+        }
+
+        /* Visual Cards */
+        .visual-card {
+            background: var(--gradient-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow-card);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .visual-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+        }
+
+        /* Device Mockup */
+        .device-mockup {
+            background: #0D1520;
+            border-radius: 20px;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .device-screen {
+            background: linear-gradient(145deg, #1a2a40 0%, #0d1825 100%);
+            border-radius: 12px;
+            aspect-ratio: 9/16;
+            max-height: 500px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .device-header {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .device-header-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--axon-white);
+        }
+
+        .device-status-bar {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .device-status-bar span {
+            width: 16px;
+            height: 8px;
+            background: var(--axon-yellow);
+            border-radius: 2px;
+            opacity: 0.5;
+        }
+
+        .device-status-bar span:last-child {
+            opacity: 1;
+        }
+
+        .device-content {
+            flex: 1;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .device-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .device-item-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--axon-yellow);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .device-item-icon svg {
+            color: var(--axon-black);
+        }
+
+        .device-item-icon svg.custom {
+            width: 20px;
+            height: 20px;
+        }
+
+        .device-item-text {
+            flex: 1;
+        }
+
+        .device-item-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.125rem;
+        }
+
+        .device-item-desc {
+            font-size: 0.625rem;
+            color: var(--axon-gray);
+        }
+
+        .device-item-badge {
+            padding: 0.25rem 0.5rem;
+            background: rgba(255, 215, 0, 0.15);
+            color: var(--axon-yellow);
+            font-size: 0.625rem;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+
+        /* Before/After Slider */
+        .comparison-slider {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/10;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: ew-resize;
+            user-select: none;
+        }
+
+        .comparison-before,
+        .comparison-after {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .comparison-before {
+            background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+            clip-path: polygon(0 0, var(--slider-position, 50%) 0, var(--slider-position, 50%) 100%, 0 100%);
+        }
+
+        .comparison-after {
+            background: linear-gradient(145deg, #0f3460 0%, #16213e 100%);
+        }
+
+        .comparison-label {
+            position: absolute;
+            top: 1rem;
+            padding: 0.375rem 0.75rem;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .comparison-before .comparison-label {
+            left: 1rem;
+            color: var(--axon-gray);
+        }
+
+        .comparison-after .comparison-label {
+            right: 1rem;
+            color: var(--axon-yellow);
+        }
+
+        .comparison-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: var(--slider-position, 50%);
+            width: 4px;
+            background: var(--axon-white);
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .comparison-handle::before,
+        .comparison-handle::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--axon-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .comparison-handle::before {
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--axon-white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%230A1628' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='15 18 9 12 15 6'%3E%3C/polyline%3E%3C/svg%3E") no-repeat center;
+            background-size: 16px;
+            background-position: 8px center;
+        }
+
+        .comparison-handle::after {
+            display: none;
+        }
+
+        .comparison-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            max-width: 280px;
+        }
+
+        .comparison-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        .comparison-item-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .comparison-before .comparison-item-icon {
+            background: rgba(255, 107, 53, 0.2);
+            color: var(--axon-accent);
+        }
+
+        .comparison-after .comparison-item-icon {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--axon-yellow);
+        }
+
+        .comparison-item-text {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Workflow Diagram */
+        .workflow-diagram {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .workflow-step {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.5s var(--transition-smooth);
+        }
+
+        .workflow-step.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .workflow-number {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .workflow-step:not(:last-child)         .workflow-number::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 1.5rem;
+            background: linear-gradient(to bottom, var(--axon-yellow), transparent);
+        }
+
+        .workflow-content {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.25rem;
+        }
+
+        .workflow-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .workflow-desc {
+            font-size: 0.875rem;
+            color: var(--axon-gray);
+        }
+
+        /* Capability Carousel */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s var(--transition-smooth);
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            padding: 0 1rem;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .carousel-dot.active {
+            background: var(--axon-yellow);
+            transform: scale(1.2);
+        }
+
+        .carousel-arrows {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            padding: 0 0.5rem;
+        }
+
+        .carousel-arrow {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            pointer-events: all;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .carousel-arrow:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .carousel-arrow svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Progress Bar Visualization */
+        .progress-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .progress-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s var(--transition-smooth);
+        }
+
+        .progress-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-label {
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .progress-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--axon-yellow);
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 4px;
+            width: 0;
+            transition: width 1.5s var(--transition-smooth);
+        }
+
+        .progress-item.visible .progress-fill {
+            width: var(--progress-value);
+        }
+
+        /* Feature List */
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .feature-list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .feature-list-icon {
+            width: 24px;
+            height: 24px;
+            background: rgba(255, 215, 0, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 0.125rem;
+        }
+
+        .feature-list-icon svg {
+            width: 14px;
+            height: 14px;
+            color: var(--axon-yellow);
+        }
+
+        .feature-list-text {
+            font-size: 1rem;
+            color: var(--axon-light);
+        }
+
+        /* Minor Features Section */
+        .minor-features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .minor-feature-card {
+            background: var(--gradient-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 2.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s var(--transition-smooth);
+        }
+
+        .minor-feature-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .minor-feature-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 215, 0, 0.15);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .minor-feature-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--axon-yellow);
+        }
+
+        .minor-feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .minor-feature-desc {
+            color: var(--axon-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        /* Android/iOS Comparison */
+        .platform-comparison {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .platform-card {
+            background: var(--gradient-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .platform-logo {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .platform-logo svg {
+            width: 48px;
+            height: 48px;
+        }
+
+        .platform-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .platform-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.375rem 0.75rem;
+            background: rgba(255, 215, 0, 0.15);
+            color: var(--axon-yellow);
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 100px;
+        }
+
+        .platform-connector {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .platform-connector-line {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--axon-yellow), var(--axon-gold), var(--axon-yellow));
+            position: relative;
+        }
+
+        .platform-connector-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .platform-connector-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .platform-connector-text {
+            font-size: 0.75rem;
+            color: var(--axon-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* POC Badge */
+        .poc-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(255, 107, 53, 0.05) 100%);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--axon-accent);
+            margin-bottom: 1rem;
+        }
+
+        /* Closing Section */
+        .closing-section {
+            background: linear-gradient(180deg, var(--axon-black) 0%, #000000 100%);
+            text-align: center;
+            padding: 10rem 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .closing-orb {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .closing-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .closing-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .closing-desc {
+            font-size: 1.25rem;
+            color: var(--axon-gray);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .closing-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            opacity: 0.5;
+        }
+
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s var(--transition-smooth);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Interactive Slider Input */
+        .slider-control {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+        }
+
+        .slider-label {
+            font-size: 0.75rem;
+            color: var(--axon-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            white-space: nowrap;
+        }
+
+        .slider-input {
+            flex: 1;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .slider-input::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--axon-yellow);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            transition: transform 0.2s;
+        }
+
+        .slider-input::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        .slider-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--axon-yellow);
+            min-width: 60px;
+            text-align: right;
+        }
+
+        /* Capability Tags */
+        .capability-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .capability-tag {
+            padding: 0.375rem 0.75rem;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--axon-yellow);
+        }
+
+        /* ========== MOBILE RESPONSIVE STYLES ========== */
+        
+        @media (max-width: 1024px) {
+            .nav {
+                padding: 0.875rem 1.5rem;
+            }
+            
+            .nav-links {
+                gap: 0.25rem;
+            }
+            
+            .nav-link {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.75rem;
+            }
+            
+            .section {
+                padding: 6rem 2rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .feature-grid.reverse {
+                direction: ltr;
+            }
+            
+            .hero-stats {
+                gap: 2rem;
+            }
+            
+            .platform-comparison {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .platform-connector {
+                transform: rotate(90deg);
+            }
+            
+            .platform-connector-line {
+                width: 60px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav {
+                padding: 0.75rem 1rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 0.25rem;
+            }
+            
+            .nav-link {
+                padding: 0.375rem 0.5rem;
+                font-size: 0.65rem;
+            }
+            
+            .nav-logo span {
+                font-size: 1rem;
+            }
+            
+            .nav-logo svg {
+                width: 28px;
+                height: 28px;
+            }
+            
+            .hero {
+                padding: 8rem 1.5rem 4rem;
+                min-height: auto;
+            }
+            
+            .hero-title {
+                font-size: 2.25rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .hero-stat-value {
+                font-size: 2.5rem;
+            }
+            
+            .hero-scroll {
+                display: none;
+            }
+            
+            .section {
+                min-height: auto;
+                padding: 4rem 1.25rem;
+            }
+            
+            .section-header {
+                margin-bottom: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            .section-desc {
+                font-size: 1rem;
+            }
+            
+            .feature-grid {
+                gap: 2rem;
+            }
+            
+            .feature-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .feature-list-item {
+                align-items: flex-start;
+            }
+            
+            .feature-list-text {
+                font-size: 0.875rem;
+            }
+            
+            .visual-card {
+                padding: 1.25rem;
+                border-radius: 16px;
+            }
+            
+            .comparison-slider {
+                aspect-ratio: 4/5;
+            }
+            
+            .comparison-content {
+                max-width: 100%;
+            }
+            
+            .comparison-item {
+                padding: 0.5rem 0.75rem;
+            }
+            
+            .comparison-item-text {
+                font-size: 0.75rem;
+            }
+            
+            .comparison-item-icon {
+                width: 28px;
+                height: 28px;
+            }
+            
+            .comparison-label {
+                font-size: 0.625rem;
+                padding: 0.25rem 0.5rem;
+            }
+            
+            .slider-control {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.75rem;
+            }
+            
+            .workflow-step {
+                gap: 1rem;
+            }
+            
+            .workflow-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .workflow-content {
+                padding: 1rem;
+            }
+            
+            .workflow-title {
+                font-size: 0.875rem;
+            }
+            
+            .workflow-desc {
+                font-size: 0.75rem;
+            }
+            
+            .capability-tags {
+                gap: 0.375rem;
+            }
+            
+            .capability-tag {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.625rem;
+            }
+            
+            .device-mockup {
+                padding: 0.75rem;
+            }
+            
+            .device-screen {
+                max-height: 400px;
+            }
+            
+            .device-item {
+                padding: 0.5rem;
+                gap: 0.5rem;
+            }
+            
+            .device-item-icon {
+                width: 32px;
+                height: 32px;
+            }
+            
+            .device-item-title {
+                font-size: 0.625rem;
+            }
+            
+            .device-item-desc {
+                font-size: 0.5rem;
+            }
+            
+            .device-item-badge {
+                font-size: 0.5rem;
+                padding: 0.125rem 0.375rem;
+            }
+            
+            .minor-features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .minor-feature-card {
+                padding: 1.5rem;
+                border-radius: 16px;
+            }
+            
+            .minor-feature-icon {
+                width: 48px;
+                height: 48px;
+                margin-bottom: 1rem;
+            }
+            
+            .minor-feature-icon svg {
+                width: 24px;
+                height: 24px;
+            }
+            
+            .minor-feature-title {
+                font-size: 1.25rem;
+            }
+            
+            .minor-feature-desc {
+                font-size: 0.875rem;
+            }
+            
+            .progress-visual {
+                gap: 1rem;
+            }
+            
+            .progress-label {
+                font-size: 0.75rem;
+            }
+            
+            .progress-value {
+                font-size: 0.75rem;
+            }
+            
+            .platform-card {
+                padding: 1.5rem;
+            }
+            
+            .platform-logo {
+                width: 48px;
+                height: 48px;
+                margin-bottom: 1rem;
+            }
+            
+            .platform-logo svg {
+                width: 36px;
+                height: 36px;
+            }
+            
+            .platform-name {
+                font-size: 1rem;
+            }
+            
+            .closing-section {
+                padding: 5rem 1.5rem;
+            }
+            
+            .closing-title {
+                font-size: 1.75rem;
+            }
+            
+            .closing-desc {
+                font-size: 1rem;
+            }
+            
+            .closing-logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .poc-badge {
+                font-size: 0.75rem;
+                padding: 0.375rem 0.75rem;
+            }
+            
+            .hero-badge {
+                font-size: 0.75rem;
+                padding: 0.375rem 0.75rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .nav {
+                justify-content: center;
+            }
+            
+            .hero-title {
+                font-size: 1.75rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.875rem;
+            }
+            
+            .hero-stat-value {
+                font-size: 2rem;
+            }
+            
+            .hero-stat-label {
+                font-size: 0.625rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .feature-stat-value {
+                font-size: 1.5rem;
+            }
+            
+            .feature-stat-label {
+                font-size: 0.75rem;
+            }
+            
+            .comparison-slider {
+                aspect-ratio: 3/4;
+            }
+            
+            .comparison-handle::before {
+                width: 32px;
+                height: 32px;
+                background-size: 12px;
+            }
+        }
+
+        /* ========== HERO APP MOCKUP ========== */
+        
+        .hero-layout {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6rem;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+        
+        .hero-mockup {
+            flex-shrink: 0;
+            perspective: 1000px;
+        }
+        
+        .phone-frame {
+            width: 340px;
+            position: relative;
+            transform: rotateY(-5deg) rotateX(2deg);
+            transition: transform 0.5s ease;
+            filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.5)) drop-shadow(0 15px 40px rgba(0, 0, 0, 0.4));
+        }
+        
+        .phone-frame:hover {
+            transform: rotateY(0deg) rotateX(0deg);
+        }
+        
+        /* Shiny glossy effect overlay */
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 45px;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.12) 0%,
+                rgba(255, 255, 255, 0.04) 30%,
+                transparent 50%
+            );
+            pointer-events: none;
+            z-index: 10;
+        }
+        
+        .phone-screen {
+            position: relative;
+            border-radius: 45px;
+            overflow: hidden;
+        }
+        
+        .phone-screen img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Screen reflection effect */
+        .phone-screen::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                155deg,
+                rgba(255, 255, 255, 0.08) 0%,
+                transparent 35%
+            );
+            pointer-events: none;
+            border-radius: 45px;
+        }
+        
+        /* Ambient glow */
+        .phone-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 600px;
+            background: radial-gradient(ellipse, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+            filter: blur(40px);
+        }
+        
+        @media (max-width: 1100px) {
+            .hero-layout {
+                flex-direction: column;
+                gap: 3rem;
+            }
+            
+            .hero-text {
+                text-align: center;
+                max-width: 100%;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .phone-frame {
+                width: 280px;
+                transform: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-layout {
+                gap: 2rem;
+            }
+            
+            .phone-frame {
+                width: 220px;
+            }
+            
+            .phone-frame::before {
+                border-radius: 36px;
+            }
+            
+            .phone-screen {
+                border-radius: 36px;
+            }
+            
+            .phone-screen::after {
+                border-radius: 36px;
+            }
+        }
+
+        /* ========== HORIZONTAL SCROLL/CAROUSEL NAVIGATION ========== */
+        
+        /* Horizontal scroll container - applies to all screen sizes */
+        .sections-wrapper {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            height: 100vh;
+            will-change: scroll-position;
+            overscroll-behavior-x: contain;
+        }
+        
+        .sections-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* Each section becomes a full-screen slide */
+        .sections-wrapper > section,
+        .sections-wrapper > .closing-section {
+            flex: 0 0 100vw;
+            width: 100vw;
+            min-width: 100vw;
+            max-width: 100vw;
+            height: 100vh;
+            min-height: 100vh;
+            max-height: 100vh;
+            overflow: hidden;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+
+        .sections-wrapper > .hero {
+            flex: 0 0 100vw;
+            width: 100vw;
+            min-width: 100vw;
+            max-width: 100vw;
+            height: 100vh;
+            min-height: 100vh;
+            max-height: 100vh;
+            overflow: hidden;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+        
+        /* Section styles for slides */
+        .sections-wrapper .section {
+            min-height: 100vh;
+            height: 100vh;
+            padding: 6rem 4rem 4rem;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .sections-wrapper .hero {
+            min-height: 100vh;
+            height: 100vh;
+            padding: 6rem 4rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .sections-wrapper .closing-section {
+            min-height: 100vh;
+            height: 100vh;
+            padding: 6rem 4rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        /* Navigation dots - visible on all screens */
+        .swipe-nav {
+            display: flex;
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            gap: 0.75rem;
+            z-index: 1000;
+            padding: 0.75rem 1.25rem;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 100px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .swipe-nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+        
+        .swipe-nav-dot:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: scale(1.2);
+        }
+        
+        .swipe-nav-dot.active {
+            background: var(--axon-yellow);
+            transform: scale(1.4);
+        }
+        
+        .swipe-nav-dot:focus {
+            outline: 2px solid var(--axon-yellow);
+            outline-offset: 2px;
+        }
+        
+        /* Navigation arrows for desktop */
+        .nav-arrows {
+            display: flex;
+            position: fixed;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            justify-content: space-between;
+            padding: 0 1.5rem;
+            pointer-events: none;
+            z-index: 999;
+        }
+        
+        .nav-arrow {
+            width: 56px;
+            height: 56px;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            pointer-events: all;
+            transition: all 0.3s ease;
+            color: var(--axon-white);
+        }
+        
+        .nav-arrow:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: var(--axon-yellow);
+            transform: scale(1.1);
+        }
+        
+        .nav-arrow:active {
+            transform: scale(0.95);
+        }
+        
+        .nav-arrow.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        
+        .nav-arrow svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        /* Swipe hint overlay - shown initially */
+        .swipe-hint {
+            display: flex;
+            position: fixed;
+            bottom: 6rem;
+            left: 50%;
+            transform: translateX(-50%);
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1.25rem;
+            background: rgba(255, 215, 0, 0.15);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 100px;
+            font-size: 0.875rem;
+            color: var(--axon-yellow);
+            z-index: 999;
+            animation: swipeHintPulse 2s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        .swipe-hint.hidden {
+            display: none;
+        }
+        
+        .swipe-hint svg {
+            width: 18px;
+            height: 18px;
+            animation: swipeArrow 1s ease-in-out infinite;
+        }
+        
+        @keyframes swipeHintPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        
+        @keyframes swipeArrow {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(5px); }
+        }
+        
+        /* Hide vertical scroll indicator */
+        .hero-scroll {
+            display: none;
+        }
+        
+        /* Hide inactive sections from screen readers */
+        .sections-wrapper > section[aria-hidden="true"],
+        .sections-wrapper > .hero[aria-hidden="true"],
+        .sections-wrapper > .closing-section[aria-hidden="true"] {
+            visibility: hidden;
+        }
+        
+        .sections-wrapper > section[aria-hidden="false"],
+        .sections-wrapper > .hero[aria-hidden="false"],
+        .sections-wrapper > .closing-section[aria-hidden="false"] {
+            visibility: visible;
+        }
+        
+        /* Desktop adjustments */
+        @media (min-width: 769px) {
+            .sections-wrapper .section {
+                padding: 7rem 5rem 5rem;
+            }
+            
+            .sections-wrapper .hero {
+                padding: 7rem 5rem 5rem;
+            }
+            
+            .sections-wrapper .closing-section {
+                padding: 7rem 5rem 5rem;
+            }
+        }
+        
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .sections-wrapper .section {
+                padding: 5rem 1.25rem 5rem;
+            }
+            
+            .sections-wrapper .hero {
+                padding: 5rem 1.5rem 5rem;
+            }
+            
+            .sections-wrapper .closing-section {
+                padding: 3rem 1.5rem 5rem;
+            }
+            
+            .swipe-nav {
+                bottom: 1.5rem;
+                padding: 0.5rem 0.75rem;
+                gap: 0.5rem;
+            }
+            
+            .swipe-nav-dot {
+                width: 8px;
+                height: 8px;
+            }
+            
+            .nav-arrows {
+                display: none;
+            }
+            
+            .swipe-hint {
+                bottom: 4rem;
+                font-size: 0.75rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+        
+        /* Respect reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            .sections-wrapper {
+                scroll-behavior: auto;
+                scroll-snap-type: none;
+            }
+            
+            .swipe-hint {
+                animation: none;
+            }
+            
+            .swipe-hint svg {
+                animation: none;
+            }
+            
+            .swipe-nav-dot,
+            .nav-arrow {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (Desktop) -->
+    <nav class="nav" id="nav">
+        <div class="nav-logo">
+            <svg viewBox="0 0 1024 1024" fill="none">
+                <path d="M829.499 726.01C831.736 728.568 835.8 725.698 834.092 722.749L575.586 277.317L575.468 277.375L526.691 193.201C524.591 189.57 521.254 189.355 519.468 189.55C517.702 189.745 514.541 190.624 513.226 194.51L442.78 428.072C431.768 464.643 459.307 501.488 497.7 501.488H568.304C609.17 501.488 648.034 519.041 674.905 549.676L829.499 726.01Z" fill="#FFD700"/>
+                <path d="M414.889 441.72L468.878 264.706C469.846 261.612 465.474 259.732 463.81 262.542L154.711 787.908C152.622 791.571 154.054 794.4 155.64 796.146C157.207 797.893 159.934 799.658 163.938 798.007L164.847 797.646L439.147 698.651C472.031 686.787 486.095 648.745 468.588 618.962L427.656 549.276C408.506 516.664 403.882 477.768 414.889 441.72Z" fill="#FFD700"/>
+                <path d="M863.196 834.39H783.48V834.499H192.21C189.185 834.499 188.433 830.444 191.289 829.448L470.438 730.887C500.198 720.387 525.204 700.164 541.08 673.732L579.313 610.059C598.138 578.702 643.417 574.465 668.142 601.767L868.795 823.383C871.125 826.243 870.298 829.05 869.603 830.48C868.87 831.946 867.104 834.39 863.196 834.39Z" fill="#FFD700"/>
+            </svg>
+            <span>Axon App</span>
+        </div>
+        <div class="nav-links">
+            <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+            <a href="#smart-capture" class="nav-link" data-section="smart-capture">Smart Capture</a>
+            <a href="#ai-tagging" class="nav-link" data-section="ai-tagging">AI Auto Tagging</a>
+            <a href="#capture-parity" class="nav-link" data-section="capture-parity">Capture Parity</a>
+            <a href="#device-checkout" class="nav-link" data-section="device-checkout">Device Checkout</a>
+            <a href="#more-features" class="nav-link" data-section="more-features">Additional Capabilities</a>
+        </div>
+    </nav>
+
+    <!-- Mobile Swipe Navigation -->
+    <nav class="swipe-nav" id="swipeNav" aria-label="Section navigation">
+        <button class="swipe-nav-dot active" data-index="0" aria-label="Hero section" aria-current="true"></button>
+        <button class="swipe-nav-dot" data-index="1" aria-label="Smart Capture section"></button>
+        <button class="swipe-nav-dot" data-index="2" aria-label="AI Auto Tagging section"></button>
+        <button class="swipe-nav-dot" data-index="3" aria-label="Capture Parity section"></button>
+        <button class="swipe-nav-dot" data-index="4" aria-label="Device Checkout section"></button>
+        <button class="swipe-nav-dot" data-index="5" aria-label="Additional Capabilities section"></button>
+    </nav>
+    
+    <!-- Navigation Arrows (Desktop) -->
+    <div class="nav-arrows" id="navArrows">
+        <button class="nav-arrow nav-arrow-prev" id="navPrev" aria-label="Previous section">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+        </button>
+        <button class="nav-arrow nav-arrow-next" id="navNext" aria-label="Next section">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </button>
+    </div>
+    
+
+    <!-- Sections Wrapper (horizontal scroll on mobile) -->
+    <div class="sections-wrapper" id="sectionsWrapper">
+    
+    <!-- Hero Section -->
+    <section class="hero" id="hero" data-section-index="0">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+        <div class="hero-particles" id="particles"></div>
+        
+        <div class="hero-content">
+            <div class="hero-layout">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="8,1 10,6 15,7 11,11 12,16 8,13 4,16 5,11 1,7 6,6" />
+                        </svg>
+                        Year in Review
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="app-name">Axon App</span>
+                        <span class="gradient-text">2025 Achievements</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        A year of transformative innovation, delivering powerful capabilities that redefine evidence management for public safety.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">4</div>
+                            <div class="hero-stat-label">Major Features</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">6</div>
+                            <div class="hero-stat-label">Key Improvements</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">100%</div>
+                            <div class="hero-stat-label">Platform Parity</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-mockup">
+                    <div class="phone-glow"></div>
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <img src="images/axon-app-home.png" alt="Axon App Home Screen">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-scroll">
+            <span>Scroll to explore</span>
+            <div class="hero-scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Smart Capture Section -->
+    <section class="section section-smart-capture" id="smart-capture" data-section-index="1">
+        <div class="section-container">
+            <div class="feature-grid">
+                <div class="feature-content">
+                    <div class="section-header">
+                        <div class="section-label">Major Feature</div>
+                        <h2 class="section-title">Smart Capture</h2>
+                        <p class="section-desc">
+                            Intelligent evidence capture that automatically detects, categorizes, and optimizes media in real-time — reducing manual effort and ensuring nothing is missed.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-list">
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Auto-detection of evidence types (documents, license plates, faces)</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Intelligent framing suggestions for optimal capture quality</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Real-time image enhancement and stabilization</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Automatic metadata enrichment at capture</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-stats">
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">85%</div>
+                            <div class="feature-stat-label">Faster Processing</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">40%</div>
+                            <div class="feature-stat-label">Less Manual Tagging</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-visual">
+                    <div class="visual-card">
+                        <div class="comparison-slider" id="smartCaptureSlider">
+                            <div class="comparison-after">
+                                <span class="comparison-label">Smart Capture</span>
+                                <div class="comparison-content">
+                                    <div class="comparison-item">
+                                        <div class="comparison-item-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                                <polyline points="22,4 12,14.01 9,11.01" />
+                                            </svg>
+                                        </div>
+                                        <span class="comparison-item-text">Auto-detected License Plate</span>
+                                    </div>
+                                    <div class="comparison-item">
+                                        <div class="comparison-item-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                                <polyline points="22,4 12,14.01 9,11.01" />
+                                            </svg>
+                                        </div>
+                                        <span class="comparison-item-text">Enhanced & Stabilized</span>
+                                    </div>
+                                    <div class="comparison-item">
+                                        <div class="comparison-item-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                                <polyline points="22,4 12,14.01 9,11.01" />
+                                            </svg>
+                                        </div>
+                                        <span class="comparison-item-text">Metadata Auto-Applied</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comparison-before">
+                                <span class="comparison-label">Manual Capture</span>
+                                <div class="comparison-content">
+                                    <div class="comparison-item">
+                                        <div class="comparison-item-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <circle cx="12" cy="12" r="10" />
+                                                <line x1="15" y1="9" x2="9" y2="15" />
+                                                <line x1="9" y1="9" x2="15" y2="15" />
+                                            </svg>
+                                        </div>
+                                        <span class="comparison-item-text">Manual Classification</span>
+                                    </div>
+                                    <div class="comparison-item">
+                                        <div class="comparison-item-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <circle cx="12" cy="12" r="10" />
+                                                <line x1="15" y1="9" x2="9" y2="15" />
+                                                <line x1="9" y1="9" x2="15" y2="15" />
+                                            </svg>
+                                        </div>
+                                        <span class="comparison-item-text">Post-Processing Required</span>
+                                    </div>
+                                    <div class="comparison-item">
+                                        <div class="comparison-item-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <circle cx="12" cy="12" r="10" />
+                                                <line x1="15" y1="9" x2="9" y2="15" />
+                                                <line x1="9" y1="9" x2="15" y2="15" />
+                                            </svg>
+                                        </div>
+                                        <span class="comparison-item-text">Manual Tagging</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comparison-handle"></div>
+                        </div>
+                        <div class="slider-control">
+                            <span class="slider-label">Drag to Compare</span>
+                            <input type="range" class="slider-input" id="smartCaptureControl" min="0" max="100" value="50">
+                            <span class="slider-value" id="smartCaptureValue">50%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Auto Tagging Section -->
+    <section class="section section-ai-tagging" id="ai-tagging" data-section-index="2">
+        <div class="section-container">
+            <div class="feature-grid reverse">
+                <div class="feature-content">
+                    <div class="section-header">
+                        <div class="section-label">AI-Powered</div>
+                        <h2 class="section-title">AI Auto Tagging</h2>
+                        <p class="section-desc">
+                            Machine learning-powered automatic tagging that understands context, identifies objects, and applies consistent metadata — transforming hours of work into seconds.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-list">
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Object recognition: vehicles, weapons, persons, evidence</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Scene classification for incident context</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Text extraction from documents and signs</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Confidence scoring with human review workflow</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-stats">
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">98.5%</div>
+                            <div class="feature-stat-label">Accuracy Rate</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">10x</div>
+                            <div class="feature-stat-label">Faster Cataloging</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-visual">
+                    <div class="visual-card">
+                        <div class="workflow-diagram" id="aiTaggingWorkflow">
+                            <div class="workflow-step">
+                                <div class="workflow-number">1</div>
+                                <div class="workflow-content">
+                                    <div class="workflow-title">Evidence Uploaded</div>
+                                    <div class="workflow-desc">Image or video captured and queued for processing</div>
+                                </div>
+                            </div>
+                            <div class="workflow-step">
+                                <div class="workflow-number">2</div>
+                                <div class="workflow-content">
+                                    <div class="workflow-title">AI Analysis</div>
+                                    <div class="workflow-desc">ML models identify objects, text, and scene context</div>
+                                </div>
+                            </div>
+                            <div class="workflow-step">
+                                <div class="workflow-number">3</div>
+                                <div class="workflow-content">
+                                    <div class="workflow-title">Tag Generation</div>
+                                    <div class="workflow-desc">Suggested tags created with confidence scores</div>
+                                </div>
+                            </div>
+                            <div class="workflow-step">
+                                <div class="workflow-number">4</div>
+                                <div class="workflow-content">
+                                    <div class="workflow-title">Human Verification</div>
+                                    <div class="workflow-desc">Optional review for high-stakes evidence</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="capability-tags">
+                            <span class="capability-tag">Vehicle Detection</span>
+                            <span class="capability-tag">License Plates</span>
+                            <span class="capability-tag">Weapons</span>
+                            <span class="capability-tag">Documents</span>
+                            <span class="capability-tag">Faces</span>
+                            <span class="capability-tag">Scene Type</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capture Parity Section -->
+    <section class="section section-capture-parity" id="capture-parity" data-section-index="3">
+        <div class="section-container">
+            <div class="feature-grid">
+                <div class="feature-content">
+                    <div class="section-header">
+                        <div class="section-label">Platform Milestone</div>
+                        <h2 class="section-title">Capture Parity on Android</h2>
+                        <p class="section-desc">
+                            Full feature parity achieved between iOS and Android platforms — ensuring every officer has access to the same powerful capture capabilities regardless of device.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-list">
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Identical capture workflows across platforms</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Same image quality and processing capabilities</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Unified codebase for faster feature releases</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Consistent training across all devices</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-stats">
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">100%</div>
+                            <div class="feature-stat-label">Feature Parity</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">50%</div>
+                            <div class="feature-stat-label">Faster Releases</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-visual">
+                    <div class="visual-card">
+                        <div class="platform-comparison">
+                            <div class="platform-card">
+                                <div class="platform-logo">
+                                    <svg viewBox="0 0 48 48" fill="none">
+                                        <path d="M24 4C13 4 4 13 4 24s9 20 20 20 20-9 20-20S35 4 24 4z" fill="url(#iosGrad)"/>
+                                        <path d="M24 12a12 12 0 100 24 12 12 0 000-24zm0 18a6 6 0 110-12 6 6 0 010 12z" fill="#0A0A0A"/>
+                                        <defs>
+                                            <linearGradient id="iosGrad" x1="4" y1="4" x2="44" y2="44">
+                                                <stop stop-color="#FFD700"/>
+                                                <stop offset="1" stop-color="#FFC107"/>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="platform-name">iOS</div>
+                                <div class="platform-status">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20,6 9,17 4,12"/>
+                                    </svg>
+                                    Full Support
+                                </div>
+                            </div>
+                            
+                            <div class="platform-connector">
+                                <div class="platform-connector-line"></div>
+                                <div class="platform-connector-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #0A0A0A;">
+                                        <path d="M8 7l4-4 4 4M8 17l4 4 4-4M12 3v18"/>
+                                    </svg>
+                                </div>
+                                <div class="platform-connector-text">Full Parity</div>
+                            </div>
+                            
+                            <div class="platform-card">
+                                <div class="platform-logo">
+                                    <svg viewBox="0 0 48 48" fill="none">
+                                        <rect x="4" y="8" width="40" height="32" rx="4" fill="url(#androidGrad)"/>
+                                        <rect x="12" y="16" width="24" height="16" rx="2" fill="#0A0A0A"/>
+                                        <circle cx="18" cy="24" r="3" fill="#FFD700"/>
+                                        <circle cx="30" cy="24" r="3" fill="#FFD700"/>
+                                        <defs>
+                                            <linearGradient id="androidGrad" x1="4" y1="8" x2="44" y2="40">
+                                                <stop stop-color="#FFD700"/>
+                                                <stop offset="1" stop-color="#FFC107"/>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="platform-name">Android</div>
+                                <div class="platform-status">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20,6 9,17 4,12"/>
+                                    </svg>
+                                    Full Support
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-visual" id="parityProgress" style="margin-top: 2rem;">
+                            <div class="progress-item" style="--progress-value: 100%;">
+                                <div class="progress-header">
+                                    <span class="progress-label">Photo Capture</span>
+                                    <span class="progress-value">100%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item" style="--progress-value: 100%;">
+                                <div class="progress-header">
+                                    <span class="progress-label">Video Recording</span>
+                                    <span class="progress-value">100%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item" style="--progress-value: 100%;">
+                                <div class="progress-header">
+                                    <span class="progress-label">Audio Capture</span>
+                                    <span class="progress-value">100%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item" style="--progress-value: 100%;">
+                                <div class="progress-header">
+                                    <span class="progress-label">Document Scanning</span>
+                                    <span class="progress-value">100%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Device Checkout Section -->
+    <section class="section section-device-checkout" id="device-checkout" data-section-index="4">
+        <div class="section-container">
+            <div class="feature-grid reverse">
+                <div class="feature-content">
+                    <div class="section-header">
+                        <div class="poc-badge">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                            POC with Garda
+                        </div>
+                        <div class="section-label">Strategic Initiative</div>
+                        <h2 class="section-title">Device Checkout on Axon View</h2>
+                        <p class="section-desc">
+                            Streamlined device management enabling secure checkout workflows directly from Axon View — piloted successfully with Garda security operations.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-list">
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">One-tap device checkout with officer authentication</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Real-time device status and location tracking</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Automated return reminders and compliance alerts</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Full audit trail for accountability</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-stats">
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">70%</div>
+                            <div class="feature-stat-label">Time Saved</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">99.9%</div>
+                            <div class="feature-stat-label">Device Accountability</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-visual">
+                    <div class="visual-card">
+                        <div class="device-mockup">
+                            <div class="device-screen">
+                                <div class="device-header">
+                                    <span class="device-header-title">Axon View — Device Checkout</span>
+                                    <div class="device-status-bar">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="device-content">
+                                    <div class="device-item">
+                                        <div class="device-item-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                                                <line x1="12" y1="18" x2="12" y2="18"/>
+                                            </svg>
+                                        </div>
+                                        <div class="device-item-text">
+                                            <div class="device-item-title">BWC-4521</div>
+                                            <div class="device-item-desc">Body Camera • Full Battery</div>
+                                        </div>
+                                        <div class="device-item-badge">Available</div>
+                                    </div>
+                                    <div class="device-item">
+                                        <div class="device-item-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                                                <line x1="12" y1="18" x2="12" y2="18"/>
+                                            </svg>
+                                        </div>
+                                        <div class="device-item-text">
+                                            <div class="device-item-title">BWC-4522</div>
+                                            <div class="device-item-desc">Body Camera • 85% Battery</div>
+                                        </div>
+                                        <div class="device-item-badge">Available</div>
+                                    </div>
+                                    <div class="device-item">
+                                        <div class="device-item-icon" style="background: var(--axon-charcoal);">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                                                <line x1="12" y1="18" x2="12" y2="18"/>
+                                            </svg>
+                                        </div>
+                                        <div class="device-item-text">
+                                            <div class="device-item-title">BWC-4523</div>
+                                            <div class="device-item-desc">Body Camera • Checked Out</div>
+                                        </div>
+                                        <div class="device-item-badge" style="background: rgba(255, 149, 0, 0.15); color: var(--axon-accent);">In Use</div>
+                                    </div>
+                                    <div class="device-item">
+                                        <div class="device-item-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                                <line x1="12" y1="17" x2="12" y2="21"/>
+                                            </svg>
+                                        </div>
+                                        <div class="device-item-text">
+                                            <div class="device-item-title">VEH-CAM-201</div>
+                                            <div class="device-item-desc">In-Car System • Full Battery</div>
+                                        </div>
+                                        <div class="device-item-badge">Available</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Minor Features Section -->
+    <section class="section section-minor-features" id="more-features" data-section-index="5">
+        <div class="section-container">
+            <div class="section-header animate-on-scroll" style="text-align: center; max-width: 700px; margin: 0 auto 4rem;">
+                <div class="section-label" style="justify-content: center;">Supporting Improvements</div>
+                <h2 class="section-title">Additional Capabilities</h2>
+                <p class="section-desc" style="margin: 0 auto;">
+                    Beyond major features, we delivered key improvements that enhance daily workflows and expand functionality.
+                </p>
+            </div>
+            
+            <div class="minor-features-grid">
+                <div class="minor-feature-card">
+                    <div class="minor-feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                    </div>
+                    <h3 class="minor-feature-title">Offline Notes</h3>
+                    <p class="minor-feature-desc">
+                        Create and edit notes without network connectivity. Full synchronization when back online ensures no information is lost, even in remote locations or underground facilities.
+                    </p>
+                    <div class="capability-tags">
+                        <span class="capability-tag">Auto-Save</span>
+                        <span class="capability-tag">Sync Queue</span>
+                        <span class="capability-tag">Conflict Resolution</span>
+                    </div>
+                </div>
+                
+                <div class="minor-feature-card">
+                    <div class="minor-feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="minor-feature-title">E-Signature</h3>
+                    <p class="minor-feature-desc">
+                        Capture legally-binding electronic signatures directly within the app. Streamlines consent forms, witness statements, and other documentation requiring authentication.
+                    </p>
+                    <div class="capability-tags">
+                        <span class="capability-tag">Touch Capture</span>
+                        <span class="capability-tag">Timestamp</span>
+                        <span class="capability-tag">Chain of Custody</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </div><!-- End sections-wrapper -->
+
+    <script>
+        // Initialize particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // Navigation reference
+        const nav = document.getElementById('nav');
+
+        // Active section highlighting is now handled by the horizontal navigation JS
+
+        // Animate on scroll (horizontal - using sections wrapper as root)
+        const horizontalWrapper = document.getElementById('sectionsWrapper');
+        const animateObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            root: horizontalWrapper,
+            rootMargin: '0px',
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.feature-content, .feature-visual, .animate-on-scroll, .minor-feature-card, .workflow-step, .progress-item').forEach(el => {
+            animateObserver.observe(el);
+        });
+
+        // Comparison slider functionality
+        function initComparisonSlider(sliderId, controlId, valueId) {
+            const slider = document.getElementById(sliderId);
+            const control = document.getElementById(controlId);
+            const valueDisplay = document.getElementById(valueId);
+            let isDragging = false;
+
+            function updateSlider(value) {
+                slider.style.setProperty('--slider-position', value + '%');
+                if (valueDisplay) valueDisplay.textContent = value + '%';
+                if (control) control.value = value;
+            }
+
+            if (slider) {
+                // Mouse events
+                slider.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    updateFromEvent(e);
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (isDragging) {
+                        updateFromEvent(e);
+                    }
+                });
+
+                document.addEventListener('mouseup', () => {
+                    isDragging = false;
+                });
+
+                // Touch events for mobile
+                slider.addEventListener('touchstart', (e) => {
+                    isDragging = true;
+                    updateFromTouch(e);
+                }, { passive: true });
+
+                slider.addEventListener('touchmove', (e) => {
+                    if (isDragging) {
+                        e.preventDefault(); // Prevent horizontal scroll while dragging slider
+                        updateFromTouch(e);
+                    }
+                }, { passive: false });
+
+                slider.addEventListener('touchend', () => {
+                    isDragging = false;
+                });
+
+                function updateFromEvent(e) {
+                    const rect = slider.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const percentage = Math.min(100, Math.max(0, (x / rect.width) * 100));
+                    updateSlider(Math.round(percentage));
+                }
+
+                function updateFromTouch(e) {
+                    if (e.touches && e.touches.length > 0) {
+                        const rect = slider.getBoundingClientRect();
+                        const x = e.touches[0].clientX - rect.left;
+                        const percentage = Math.min(100, Math.max(0, (x / rect.width) * 100));
+                        updateSlider(Math.round(percentage));
+                    }
+                }
+            }
+
+            if (control) {
+                control.addEventListener('input', (e) => {
+                    updateSlider(e.target.value);
+                });
+            }
+        }
+
+        initComparisonSlider('smartCaptureSlider', 'smartCaptureControl', 'smartCaptureValue');
+
+        // Fast smooth scroll function
+        function fastSmoothScroll(element, targetLeft, duration = 200) {
+            const startLeft = element.scrollLeft;
+            const distance = targetLeft - startLeft;
+            const startTime = performance.now();
+            
+            function easeOutCubic(t) {
+                return 1 - Math.pow(1 - t, 3);
+            }
+            
+            function animate(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = easeOutCubic(progress);
+                
+                element.scrollLeft = startLeft + (distance * eased);
+                
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                }
+            }
+            
+            requestAnimationFrame(animate);
+        }
+
+        // Scroll for navigation links (horizontal carousel)
+        // Use instant scroll for distant sections, fast smooth for adjacent
+        const sectionOrder = ['hero', 'smart-capture', 'ai-tagging', 'capture-parity', 'device-checkout', 'more-features'];
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').slice(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    const wrapper = document.getElementById('sectionsWrapper');
+                    const currentScrollLeft = wrapper.scrollLeft;
+                    const currentIndex = Math.round(currentScrollLeft / window.innerWidth);
+                    const targetIndex = sectionOrder.indexOf(targetId);
+                    const distance = Math.abs(targetIndex - currentIndex);
+                    
+                    if (distance <= 1) {
+                        fastSmoothScroll(wrapper, targetSection.offsetLeft, 200);
+                    } else {
+                        wrapper.scrollTo({ left: targetSection.offsetLeft, behavior: 'auto' });
+                    }
+                }
+            });
+        });
+
+        // Workflow steps staggered animation (horizontal scroll)
+        const workflowSteps = document.querySelectorAll('.workflow-step');
+        const workflowObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const steps = entry.target.querySelectorAll('.workflow-step');
+                    steps.forEach((step, index) => {
+                        setTimeout(() => {
+                            step.classList.add('visible');
+                        }, index * 150);
+                    });
+                }
+            });
+        }, { root: horizontalWrapper, threshold: 0.3 });
+
+        document.querySelectorAll('.workflow-diagram').forEach(diagram => {
+            workflowObserver.observe(diagram);
+        });
+
+        // Progress bars staggered animation (horizontal scroll)
+        const progressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const items = entry.target.querySelectorAll('.progress-item');
+                    items.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, index * 200);
+                    });
+                }
+            });
+        }, { root: horizontalWrapper, threshold: 0.3 });
+
+        document.querySelectorAll('.progress-visual').forEach(visual => {
+            progressObserver.observe(visual);
+        });
+
+        // Minor features staggered animation (horizontal scroll)
+        const minorObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const cards = document.querySelectorAll('.minor-feature-card');
+                    cards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, index * 200);
+                    });
+                }
+            });
+        }, { root: horizontalWrapper, threshold: 0.2 });
+
+        document.querySelectorAll('.minor-features-grid').forEach(grid => {
+            minorObserver.observe(grid);
+        });
+
+        // ========== HORIZONTAL SCROLL/CAROUSEL NAVIGATION ==========
+        
+        (function initHorizontalNav() {
+            const wrapper = document.getElementById('sectionsWrapper');
+            const swipeNav = document.getElementById('swipeNav');
+            const navPrev = document.getElementById('navPrev');
+            const navNext = document.getElementById('navNext');
+            const dots = document.querySelectorAll('.swipe-nav-dot');
+            const allSections = wrapper.querySelectorAll('[data-section-index]');
+            const sectionIds = ['hero', 'smart-capture', 'ai-tagging', 'capture-parity', 'device-checkout', 'more-features'];
+            
+            let currentIndex = 0;
+            let scrollTimeout = null;
+            let isScrolling = false;
+            
+            // Check for reduced motion preference
+            function prefersReducedMotion() {
+                return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            }
+            
+            // Update navigation arrow states (continuous loop - arrows always enabled)
+            function updateArrowStates(index) {
+                // Arrows are always enabled for continuous scrolling
+                if (navPrev) {
+                    navPrev.classList.remove('disabled');
+                    navPrev.setAttribute('aria-disabled', 'false');
+                }
+                if (navNext) {
+                    navNext.classList.remove('disabled');
+                    navNext.setAttribute('aria-disabled', 'false');
+                }
+            }
+            
+            // Update active dot and aria attributes
+            function updateActiveDot(index) {
+                dots.forEach((dot, i) => {
+                    const isActive = i === index;
+                    dot.classList.toggle('active', isActive);
+                    dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+                });
+                
+                // Update section aria-hidden for accessibility
+                allSections.forEach((section, i) => {
+                    section.setAttribute('aria-hidden', i !== index ? 'true' : 'false');
+                });
+                
+                // Update arrow states
+                updateArrowStates(index);
+                
+                // Update nav link active states
+                const navLinks = document.querySelectorAll('.nav-link[data-section]');
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.section === sectionIds[index]) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                currentIndex = index;
+            }
+            
+            // Update URL hash
+            function updateHash(index) {
+                const sectionId = sectionIds[index];
+                if (sectionId && history.replaceState) {
+                    history.replaceState(null, null, '#' + sectionId);
+                }
+            }
+            
+            // Navigate to section by index (with continuous loop)
+            function goToSection(index, smooth = true) {
+                // Continuous loop: wrap around at ends
+                if (index < 0) {
+                    index = allSections.length - 1; // Go to last section
+                } else if (index >= allSections.length) {
+                    index = 0; // Go to first section
+                }
+                
+                isScrolling = true;
+                const section = allSections[index];
+                const targetLeft = index * window.innerWidth;
+                
+                if (smooth && !prefersReducedMotion()) {
+                    // Smooth scroll with easing
+                    smoothScrollTo(wrapper, targetLeft, 400);
+                } else {
+                    wrapper.scrollLeft = targetLeft;
+                }
+                
+                updateActiveDot(index);
+                updateHash(index);
+                
+                // Reset scrolling flag after animation
+                setTimeout(() => {
+                    isScrolling = false;
+                }, smooth ? 450 : 50);
+            }
+            
+            // Custom smooth scroll function with easing
+            function smoothScrollTo(element, targetLeft, duration) {
+                const startLeft = element.scrollLeft;
+                const distance = targetLeft - startLeft;
+                const startTime = performance.now();
+                
+                function easeOutCubic(t) {
+                    return 1 - Math.pow(1 - t, 3);
+                }
+                
+                function animate(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easedProgress = easeOutCubic(progress);
+                    
+                    element.scrollLeft = startLeft + (distance * easedProgress);
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(animate);
+                    }
+                }
+                
+                requestAnimationFrame(animate);
+            }
+            
+            // Get current section index from scroll position
+            function getCurrentSectionFromScroll() {
+                const scrollLeft = wrapper.scrollLeft;
+                const sectionWidth = window.innerWidth;
+                return Math.round(scrollLeft / sectionWidth);
+            }
+            
+            // Handle scroll events (for scroll-snap detection)
+            function handleScroll() {
+                // Debounce scroll end detection
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    const newIndex = getCurrentSectionFromScroll();
+                    if (newIndex !== currentIndex) {
+                        updateActiveDot(newIndex);
+                        updateHash(newIndex);
+                    }
+                }, 100);
+            }
+            
+            // Handle mouse wheel for horizontal scrolling
+            function handleWheel(e) {
+                // Prevent default vertical scroll
+                e.preventDefault();
+                
+                // Only navigate if not currently scrolling
+                if (isScrolling) return;
+                
+                // Determine direction
+                const delta = e.deltaY || e.deltaX;
+                if (Math.abs(delta) < 30) return; // Threshold to prevent tiny movements
+                
+                if (delta > 0) {
+                    goToSection(currentIndex + 1);
+                } else {
+                    goToSection(currentIndex - 1);
+                }
+            }
+            
+            // Handle dot click navigation
+            function handleDotClick(e) {
+                const dot = e.target.closest('.swipe-nav-dot');
+                if (dot) {
+                    const index = parseInt(dot.dataset.index, 10);
+                    goToSection(index);
+                }
+            }
+            
+            // Handle arrow click navigation
+            function handleArrowClick(direction) {
+                if (direction === 'prev') {
+                    goToSection(currentIndex - 1);
+                } else {
+                    goToSection(currentIndex + 1);
+                }
+            }
+            
+            // Handle keyboard navigation
+            function handleKeydown(e) {
+                // Check if focus is in an input or editable element
+                const activeEl = document.activeElement;
+                if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA' || activeEl.isContentEditable)) {
+                    return;
+                }
+                
+                switch (e.key) {
+                    case 'ArrowLeft':
+                        e.preventDefault();
+                        goToSection(currentIndex - 1);
+                        break;
+                    case 'ArrowRight':
+                        e.preventDefault();
+                        goToSection(currentIndex + 1);
+                        break;
+                    case 'Home':
+                        e.preventDefault();
+                        goToSection(0);
+                        break;
+                    case 'End':
+                        e.preventDefault();
+                        goToSection(allSections.length - 1);
+                        break;
+                }
+            }
+            
+            // Handle deep linking (URL hash on load)
+            function handleDeepLink() {
+                const hash = window.location.hash.slice(1);
+                if (hash) {
+                    const index = sectionIds.indexOf(hash);
+                    if (index !== -1) {
+                        // Wait for layout to be ready
+                        requestAnimationFrame(() => {
+                            goToSection(index, false);
+                        });
+                        return;
+                    }
+                }
+                // Initialize to first section
+                updateActiveDot(0);
+            }
+            
+            // Handle hash change (browser back/forward)
+            function handleHashChange() {
+                const hash = window.location.hash.slice(1);
+                const index = sectionIds.indexOf(hash);
+                if (index !== -1 && index !== currentIndex) {
+                    goToSection(index);
+                }
+            }
+            
+            // Initialize
+            function init() {
+                // Set up event listeners
+                wrapper.addEventListener('scroll', handleScroll, { passive: true });
+                wrapper.addEventListener('wheel', handleWheel, { passive: false });
+                swipeNav.addEventListener('click', handleDotClick);
+                document.addEventListener('keydown', handleKeydown);
+                window.addEventListener('hashchange', handleHashChange);
+                
+                // Arrow navigation
+                if (navPrev) {
+                    navPrev.addEventListener('click', () => handleArrowClick('prev'));
+                }
+                if (navNext) {
+                    navNext.addEventListener('click', () => handleArrowClick('next'));
+                }
+                
+                // Handle deep linking on load
+                handleDeepLink();
+                
+                // Initialize aria-hidden attributes
+                allSections.forEach((section, i) => {
+                    section.setAttribute('aria-hidden', i !== 0 ? 'true' : 'false');
+                });
+            }
+            
+            // Run initialization
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+</body>
+</html>
