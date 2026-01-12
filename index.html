@@ -253,9 +253,17 @@
 
         .hero-title .app-name {
             font-size: 0.6em;
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
             line-height: 1;
-            margin-bottom: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-logo {
+            width: 1.2em;
+            height: 1.2em;
         }
 
         .hero-title .gradient-text {
@@ -263,8 +271,10 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            line-height: 0.95;
+            line-height: 1.1;
             font-size: 0.7em;
+            display: inline-block;
+            padding-right: 0.05em;
         }
 
         .hero-subtitle {
@@ -2155,14 +2165,15 @@
         <div class="hero-content">
             <div class="hero-layout">
                 <div class="hero-text">
-                    <div class="hero-badge">
-                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="8,1 10,6 15,7 11,11 12,16 8,13 4,16 5,11 1,7 6,6" />
-                        </svg>
-                        2025 Recap
-                    </div>
                     <h1 class="hero-title">
-                        <span class="app-name">Axon App</span>
+                        <span class="app-name">
+                            <svg class="hero-logo" viewBox="0 0 1024 1024" fill="none">
+                                <path d="M829.499 726.01C831.736 728.568 835.8 725.698 834.092 722.749L575.586 277.317L575.468 277.375L526.691 193.201C524.591 189.57 521.254 189.355 519.468 189.55C517.702 189.745 514.541 190.624 513.226 194.51L442.78 428.072C431.768 464.643 459.307 501.488 497.7 501.488H568.304C609.17 501.488 648.034 519.041 674.905 549.676L829.499 726.01Z" fill="#FFD700"/>
+                                <path d="M414.889 441.72L468.878 264.706C469.846 261.612 465.474 259.732 463.81 262.542L154.711 787.908C152.622 791.571 154.054 794.4 155.64 796.146C157.207 797.893 159.934 799.658 163.938 798.007L164.847 797.646L439.147 698.651C472.031 686.787 486.095 648.745 468.588 618.962L427.656 549.276C408.506 516.664 403.882 477.768 414.889 441.72Z" fill="#FFD700"/>
+                                <path d="M863.196 834.39H783.48V834.499H192.21C189.185 834.499 188.433 830.444 191.289 829.448L470.438 730.887C500.198 720.387 525.204 700.164 541.08 673.732L579.313 610.059C598.138 578.702 643.417 574.465 668.142 601.767L868.795 823.383C871.125 826.243 870.298 829.05 869.603 830.48C868.87 831.946 867.104 834.39 863.196 834.39Z" fill="#FFD700"/>
+                            </svg>
+                            Axon App
+                        </span>
                         <span class="gradient-text">2025 Achievements</span>
                     </h1>
                     <p class="hero-subtitle">
