@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Axon App — 2025 Achievements</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024' fill='none'%3E%3Cpath d='M829.499 726.01C831.736 728.568 835.8 725.698 834.092 722.749L575.586 277.317L575.468 277.375L526.691 193.201C524.591 189.57 521.254 189.355 519.468 189.55C517.702 189.745 514.541 190.624 513.226 194.51L442.78 428.072C431.768 464.643 459.307 501.488 497.7 501.488H568.304C609.17 501.488 648.034 519.041 674.905 549.676L829.499 726.01Z' fill='%23FFD700'/%3E%3Cpath d='M414.889 441.72L468.878 264.706C469.846 261.612 465.474 259.732 463.81 262.542L154.711 787.908C152.622 791.571 154.054 794.4 155.64 796.146C157.207 797.893 159.934 799.658 163.938 798.007L164.847 797.646L439.147 698.651C472.031 686.787 486.095 648.745 468.588 618.962L427.656 549.276C408.506 516.664 403.882 477.768 414.889 441.72Z' fill='%23FFD700'/%3E%3Cpath d='M863.196 834.39H783.48V834.499H192.21C189.185 834.499 188.433 830.444 191.289 829.448L470.438 730.887C500.198 720.387 525.204 700.164 541.08 673.732L579.313 610.059C598.138 578.702 643.417 574.465 668.142 601.767L868.795 823.383C871.125 826.243 870.298 829.05 869.603 830.48C868.87 831.946 867.104 834.39 863.196 834.39Z' fill='%23FFD700'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -117,6 +118,85 @@
         .nav-link.active {
             color: var(--axon-yellow);
             background: rgba(255, 215, 0, 0.1);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 32px;
+            height: 32px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            z-index: 1003;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--axon-white);
+            border-radius: 2px;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1002;
+            padding: 5rem 2rem 2rem;
+            flex-direction: column;
+            gap: 0.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu .mobile-nav-link {
+            display: block;
+            color: var(--axon-gray);
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 500;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            transition: all 0.3s var(--transition-smooth);
+            border: 1px solid transparent;
+        }
+
+        .mobile-menu .mobile-nav-link:hover,
+        .mobile-menu .mobile-nav-link.active {
+            color: var(--axon-yellow);
+            background: rgba(255, 215, 0, 0.1);
+            border-color: rgba(255, 215, 0, 0.2);
         }
 
         /* Hero Section */
@@ -1616,7 +1696,30 @@
             
             .nav {
                 justify-content: center;
+                padding: 0.75rem 1rem;
+                position: fixed;
             }
+
+            .hamburger {
+                display: flex;
+                position: fixed;
+                left: 1rem;
+                top: 0.75rem;
+            }
+
+            .nav-logo span {
+                display: none;
+            }
+
+            .nav-logo svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
             
             .hero-title {
                 font-size: 1.75rem;
@@ -2019,16 +2122,19 @@
         }
         
         /* Hide inactive sections from screen readers */
-        .sections-wrapper > section[aria-hidden="true"],
-        .sections-wrapper > .hero[aria-hidden="true"],
-        .sections-wrapper > .closing-section[aria-hidden="true"] {
-            visibility: hidden;
-        }
-        
-        .sections-wrapper > section[aria-hidden="false"],
-        .sections-wrapper > .hero[aria-hidden="false"],
-        .sections-wrapper > .closing-section[aria-hidden="false"] {
-            visibility: visible;
+        /* Hide non-active sections on desktop only */
+        @media (min-width: 769px) {
+            .sections-wrapper > section[aria-hidden="true"],
+            .sections-wrapper > .hero[aria-hidden="true"],
+            .sections-wrapper > .closing-section[aria-hidden="true"] {
+                visibility: hidden;
+            }
+            
+            .sections-wrapper > section[aria-hidden="false"],
+            .sections-wrapper > .hero[aria-hidden="false"],
+            .sections-wrapper > .closing-section[aria-hidden="false"] {
+                visibility: visible;
+            }
         }
         
         /* Desktop adjustments */
@@ -2046,21 +2152,63 @@
             }
         }
         
-        /* Mobile adjustments */
+        /* Mobile adjustments - Vertical scrolling */
         @media (max-width: 768px) {
-            .sections-wrapper .section {
-                padding: 5rem 1.25rem 5rem;
+            html, body {
+                overflow: auto;
+                height: auto;
             }
-            
-            .sections-wrapper .hero {
-                padding: 5rem 1.5rem 5rem;
+
+            .sections-wrapper {
+                flex-direction: column;
+                overflow-x: hidden;
+                overflow-y: visible;
+                scroll-snap-type: none;
+                height: auto;
+                min-height: auto;
             }
-            
+
+            .sections-wrapper > section,
+            .sections-wrapper > .hero,
+            .sections-wrapper > .closing-section {
+                flex: none;
+                width: 100%;
+                min-width: 100%;
+                max-width: 100%;
+                height: auto;
+                min-height: auto;
+                max-height: none;
+                overflow: visible;
+                scroll-snap-align: start;
+            }
+
+            .sections-wrapper .section,
+            .sections-wrapper .hero,
             .sections-wrapper .closing-section {
-                padding: 3rem 1.5rem 5rem;
+                min-height: auto;
+                height: auto;
+                overflow: visible;
+                padding: 5rem 1.25rem 3rem;
+            }
+
+            .hero-content,
+            .section-container {
+                padding-top: 1rem;
+            }
+
+            .swipe-nav {
+                display: none;
+            }
+
+            .nav-arrows {
+                display: none;
+            }
+
+            .hero-scroll {
+                display: none;
             }
             
-            .swipe-nav {
+            .swipe-nav-old {
                 bottom: 1.5rem;
                 padding: 0.5rem 0.75rem;
                 gap: 0.5rem;
@@ -2107,6 +2255,11 @@
 <body>
     <!-- Navigation (Desktop) -->
     <nav class="nav" id="nav">
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <div class="nav-logo">
             <svg viewBox="0 0 1024 1024" fill="none">
                 <path d="M829.499 726.01C831.736 728.568 835.8 725.698 834.092 722.749L575.586 277.317L575.468 277.375L526.691 193.201C524.591 189.57 521.254 189.355 519.468 189.55C517.702 189.745 514.541 190.624 513.226 194.51L442.78 428.072C431.768 464.643 459.307 501.488 497.7 501.488H568.304C609.17 501.488 648.034 519.041 674.905 549.676L829.499 726.01Z" fill="#FFD700"/>
@@ -2124,6 +2277,16 @@
             <a href="#more-features" class="nav-link" data-section="more-features">Additional Capabilities</a>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#hero" class="mobile-nav-link active" data-section="hero">Home</a>
+        <a href="#smart-capture" class="mobile-nav-link" data-section="smart-capture">Smart Capture</a>
+        <a href="#ai-tagging" class="mobile-nav-link" data-section="ai-tagging">AI Auto Tagging</a>
+        <a href="#capture-parity" class="mobile-nav-link" data-section="capture-parity">Capture Parity</a>
+        <a href="#device-checkout" class="mobile-nav-link" data-section="device-checkout">Device Checkout</a>
+        <a href="#more-features" class="mobile-nav-link" data-section="more-features">Additional Capabilities</a>
+    </div>
 
     <!-- Mobile Swipe Navigation -->
     <nav class="swipe-nav" id="swipeNav" aria-label="Section navigation">
@@ -3088,6 +3251,15 @@
                         link.classList.add('active');
                     }
                 });
+
+                // Update mobile nav link active states
+                const mobileNavLinks = document.querySelectorAll('.mobile-nav-link[data-section]');
+                mobileNavLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.section === sectionIds[index]) {
+                        link.classList.add('active');
+                    }
+                });
                 
                 currentIndex = index;
             }
@@ -3267,10 +3439,20 @@
             
             // Initialize
             function init() {
+                // Check if mobile
+                const isMobile = window.innerWidth <= 768;
+
                 // Set up event listeners
                 wrapper.addEventListener('scroll', handleScroll, { passive: true });
-                wrapper.addEventListener('wheel', handleWheel, { passive: false });
-                swipeNav.addEventListener('click', handleDotClick);
+                
+                // Only add wheel handler on desktop (for horizontal scroll conversion)
+                if (!isMobile) {
+                    wrapper.addEventListener('wheel', handleWheel, { passive: false });
+                }
+                
+                if (swipeNav) {
+                    swipeNav.addEventListener('click', handleDotClick);
+                }
                 document.addEventListener('keydown', handleKeydown);
                 window.addEventListener('hashchange', handleHashChange);
                 
@@ -3289,6 +3471,43 @@
                 allSections.forEach((section, i) => {
                     section.setAttribute('aria-hidden', i !== 0 ? 'true' : 'false');
                 });
+
+                // Hamburger menu functionality
+                const hamburger = document.getElementById('hamburger');
+                const mobileMenu = document.getElementById('mobileMenu');
+                const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+                if (hamburger && mobileMenu) {
+                    hamburger.addEventListener('click', () => {
+                        hamburger.classList.toggle('active');
+                        mobileMenu.classList.toggle('active');
+                        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+                    });
+
+                    mobileNavLinks.forEach(link => {
+                        link.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const sectionId = link.getAttribute('data-section');
+                            const targetSection = document.getElementById(sectionId);
+                            
+                            // Close menu first
+                            hamburger.classList.remove('active');
+                            mobileMenu.classList.remove('active');
+                            document.body.style.overflow = '';
+                            
+                            // Scroll to section using native scroll (for vertical mobile layout)
+                            if (targetSection) {
+                                setTimeout(() => {
+                                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                }, 100);
+                            }
+                            
+                            // Update active state
+                            mobileNavLinks.forEach(l => l.classList.remove('active'));
+                            link.classList.add('active');
+                        });
+                    });
+                }
             }
             
             // Run initialization
