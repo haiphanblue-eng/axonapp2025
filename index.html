@@ -507,6 +507,18 @@
             background: linear-gradient(135deg, #0D0D0D 0%, var(--axon-black) 100%);
         }
 
+        .section-cases {
+            background: linear-gradient(135deg, var(--axon-black) 0%, #111111 100%);
+        }
+
+        .section-esignature {
+            background: linear-gradient(135deg, #111111 0%, var(--axon-black) 100%);
+        }
+
+        .section-device-checkout-new {
+            background: linear-gradient(135deg, var(--axon-black) 0%, #0D0D0D 100%);
+        }
+
         .section-minor-features {
             background: var(--axon-black);
         }
@@ -579,15 +591,22 @@
         }
 
         .feature-stat-value {
-            font-size: 2rem;
+            font-size: 3.5rem;
             font-weight: 700;
-            color: var(--axon-yellow);
-            margin-bottom: 0.25rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.15rem;
+            line-height: 1;
         }
 
         .feature-stat-label {
             font-size: 0.875rem;
             color: var(--axon-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 500;
         }
 
         /* Visual Cards */
@@ -886,6 +905,7 @@
             font-weight: 700;
             font-size: 1.25rem;
             flex-shrink: 0;
+            color: var(--axon-black);
             position: relative;
         }
 
@@ -1080,7 +1100,7 @@
         }
 
         .feature-list-text {
-            font-size: 1rem;
+            font-size: 1.25rem;
             color: var(--axon-light);
         }
 
@@ -1742,7 +1762,7 @@
             }
             
             .feature-stat-value {
-                font-size: 1.5rem;
+                font-size: 2rem;
             }
             
             .feature-stat-label {
@@ -2271,10 +2291,12 @@
         <div class="nav-links">
             <a href="#hero" class="nav-link active" data-section="hero">Home</a>
             <a href="#smart-capture" class="nav-link" data-section="smart-capture">Smart Capture</a>
-            <a href="#ai-tagging" class="nav-link" data-section="ai-tagging">AI Auto Tagging</a>
             <a href="#capture-parity" class="nav-link" data-section="capture-parity">Capture Parity</a>
-            <a href="#device-checkout" class="nav-link" data-section="device-checkout">Device Checkout</a>
-            <a href="#more-features" class="nav-link" data-section="more-features">Additional Capabilities</a>
+            <a href="#ai-tagging" class="nav-link" data-section="ai-tagging">AI Auto Tagging</a>
+            <a href="#device-checkout" class="nav-link" data-section="device-checkout">Offline Notes</a>
+            <a href="#cases" class="nav-link" data-section="cases">Cases</a>
+            <a href="#e-signature" class="nav-link" data-section="e-signature">E-Signature</a>
+            <a href="#device-checkout-section" class="nav-link" data-section="device-checkout-section">Device Checkout</a>
         </div>
     </nav>
 
@@ -2282,10 +2304,12 @@
     <div class="mobile-menu" id="mobileMenu">
         <a href="#hero" class="mobile-nav-link active" data-section="hero">Home</a>
         <a href="#smart-capture" class="mobile-nav-link" data-section="smart-capture">Smart Capture</a>
-        <a href="#ai-tagging" class="mobile-nav-link" data-section="ai-tagging">AI Auto Tagging</a>
         <a href="#capture-parity" class="mobile-nav-link" data-section="capture-parity">Capture Parity</a>
-        <a href="#device-checkout" class="mobile-nav-link" data-section="device-checkout">Device Checkout</a>
-        <a href="#more-features" class="mobile-nav-link" data-section="more-features">Additional Capabilities</a>
+        <a href="#ai-tagging" class="mobile-nav-link" data-section="ai-tagging">AI Auto Tagging</a>
+        <a href="#device-checkout" class="mobile-nav-link" data-section="device-checkout">Offline Notes</a>
+        <a href="#cases" class="mobile-nav-link" data-section="cases">Cases</a>
+        <a href="#e-signature" class="mobile-nav-link" data-section="e-signature">E-Signature</a>
+        <a href="#device-checkout-section" class="mobile-nav-link" data-section="device-checkout-section">Device Checkout</a>
     </div>
 
     <!-- Mobile Swipe Navigation -->
@@ -2381,10 +2405,10 @@
             <div class="feature-grid">
                 <div class="feature-content">
                     <div class="section-header">
-                        <div class="section-label">Major Feature</div>
+                        <div class="section-label">Adoption Update</div>
                         <h2 class="section-title">Smart Capture</h2>
                         <p class="section-desc">
-                            Intelligent evidence capture that automatically detects, categorizes, and optimizes media in real-time — reducing manual effort and ensuring nothing is missed.
+                            Early adoption phase as customers prioritize other AI Era products or await Fleet Dash integration. Building foundation for broader rollout in 2026.
                         </p>
                     </div>
                     
@@ -2395,7 +2419,7 @@
                                     <polyline points="20,6 9,17 4,12" />
                                 </svg>
                             </div>
-                            <span class="feature-list-text">Auto-detection of evidence types (documents, license plates, faces)</span>
+                            <span class="feature-list-text">PM establishing Smart Capture playbook similar to D1 and Assistant</span>
                         </div>
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
@@ -2403,7 +2427,7 @@
                                     <polyline points="20,6 9,17 4,12" />
                                 </svg>
                             </div>
-                            <span class="feature-list-text">Intelligent framing suggestions for optimal capture quality</span>
+                            <span class="feature-list-text">Creating customer-facing training video with eLearning team</span>
                         </div>
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
@@ -2411,7 +2435,7 @@
                                     <polyline points="20,6 9,17 4,12" />
                                 </svg>
                             </div>
-                            <span class="feature-list-text">Real-time image enhancement and stabilization</span>
+                            <span class="feature-list-text">Q1 '26: In-app walkthrough tooltips to increase discoverability</span>
                         </div>
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
@@ -2419,18 +2443,18 @@
                                     <polyline points="20,6 9,17 4,12" />
                                 </svg>
                             </div>
-                            <span class="feature-list-text">Automatic metadata enrichment at capture</span>
+                            <span class="feature-list-text">Customers transitioning from Capture App to Axon App</span>
                         </div>
                     </div>
                     
                     <div class="feature-stats">
                         <div class="feature-stat">
-                            <div class="feature-stat-value">85%</div>
-                            <div class="feature-stat-label">Faster Processing</div>
+                            <div class="feature-stat-value">Q1 '26</div>
+                            <div class="feature-stat-label">Tooltips Launch</div>
                         </div>
                         <div class="feature-stat">
-                            <div class="feature-stat-value">40%</div>
-                            <div class="feature-stat-label">Less Manual Tagging</div>
+                            <div class="feature-stat-value">12</div>
+                            <div class="feature-stat-label">Customers Contacted</div>
                         </div>
                     </div>
                 </div>
@@ -2518,123 +2542,16 @@
         </div>
     </section>
 
-    <!-- AI Auto Tagging Section -->
-    <section class="section section-ai-tagging" id="ai-tagging" data-section-index="2">
-        <div class="section-container">
-            <div class="feature-grid reverse">
-                <div class="feature-content">
-                    <div class="section-header">
-                        <div class="section-label">AI-Powered</div>
-                        <h2 class="section-title">AI Auto Tagging</h2>
-                        <p class="section-desc">
-                            Machine learning-powered automatic tagging that understands context, identifies objects, and applies consistent metadata — transforming hours of work into seconds.
-                        </p>
-                    </div>
-                    
-                    <div class="feature-list">
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">Object recognition: vehicles, weapons, persons, evidence</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">Scene classification for incident context</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">Text extraction from documents and signs</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">Confidence scoring with human review workflow</span>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-stats">
-                        <div class="feature-stat">
-                            <div class="feature-stat-value">98.5%</div>
-                            <div class="feature-stat-label">Accuracy Rate</div>
-                        </div>
-                        <div class="feature-stat">
-                            <div class="feature-stat-value">10x</div>
-                            <div class="feature-stat-label">Faster Cataloging</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="feature-visual">
-                    <div class="visual-card">
-                        <div class="workflow-diagram" id="aiTaggingWorkflow">
-                            <div class="workflow-step">
-                                <div class="workflow-number">1</div>
-                                <div class="workflow-content">
-                                    <div class="workflow-title">Evidence Uploaded</div>
-                                    <div class="workflow-desc">Image or video captured and queued for processing</div>
-                                </div>
-                            </div>
-                            <div class="workflow-step">
-                                <div class="workflow-number">2</div>
-                                <div class="workflow-content">
-                                    <div class="workflow-title">AI Analysis</div>
-                                    <div class="workflow-desc">ML models identify objects, text, and scene context</div>
-                                </div>
-                            </div>
-                            <div class="workflow-step">
-                                <div class="workflow-number">3</div>
-                                <div class="workflow-content">
-                                    <div class="workflow-title">Tag Generation</div>
-                                    <div class="workflow-desc">Suggested tags created with confidence scores</div>
-                                </div>
-                            </div>
-                            <div class="workflow-step">
-                                <div class="workflow-number">4</div>
-                                <div class="workflow-content">
-                                    <div class="workflow-title">Human Verification</div>
-                                    <div class="workflow-desc">Optional review for high-stakes evidence</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="capability-tags">
-                            <span class="capability-tag">Vehicle Detection</span>
-                            <span class="capability-tag">License Plates</span>
-                            <span class="capability-tag">Weapons</span>
-                            <span class="capability-tag">Documents</span>
-                            <span class="capability-tag">Faces</span>
-                            <span class="capability-tag">Scene Type</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Capture Parity Section -->
-    <section class="section section-capture-parity" id="capture-parity" data-section-index="3">
+    <section class="section section-capture-parity" id="capture-parity" data-section-index="2">
         <div class="section-container">
             <div class="feature-grid">
                 <div class="feature-content">
                     <div class="section-header">
                         <div class="section-label">Platform Milestone</div>
-                        <h2 class="section-title">Capture Parity on Android</h2>
+                        <h2 class="section-title">Capture Parity</h2>
                         <p class="section-desc">
-                            Full feature parity achieved between iOS and Android platforms — ensuring every officer has access to the same powerful capture capabilities regardless of device.
+                            On track to deliver 100% of Capture functionality in the Axon App. Android parity completes by 12/31, iOS full parity scheduled for 2/13/2026.
                         </p>
                     </div>
                     
@@ -2645,7 +2562,7 @@
                                     <polyline points="20,6 9,17 4,12" />
                                 </svg>
                             </div>
-                            <span class="feature-list-text">Identical capture workflows across platforms</span>
+                            <span class="feature-list-text">Photo Capture live on both platforms behind feature flags</span>
                         </div>
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
@@ -2653,7 +2570,7 @@
                                     <polyline points="20,6 9,17 4,12" />
                                 </svg>
                             </div>
-                            <span class="feature-list-text">Same image quality and processing capabilities</span>
+                            <span class="feature-list-text">Android 2.0.0 (early Dec) will GA Photo, Video, and Audio capture</span>
                         </div>
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
@@ -2661,7 +2578,7 @@
                                     <polyline points="20,6 9,17 4,12" />
                                 </svg>
                             </div>
-                            <span class="feature-list-text">Unified codebase for faster feature releases</span>
+                            <span class="feature-list-text">Android 100% Capture parity complete by 12/31</span>
                         </div>
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
@@ -2669,18 +2586,18 @@
                                     <polyline points="20,6 9,17 4,12" />
                                 </svg>
                             </div>
-                            <span class="feature-list-text">Consistent training across all devices</span>
+                            <span class="feature-list-text">iOS parity scheduled 2/13/2026 (NCIC prioritized earlier)</span>
                         </div>
                     </div>
                     
                     <div class="feature-stats">
                         <div class="feature-stat">
-                            <div class="feature-stat-value">100%</div>
-                            <div class="feature-stat-label">Feature Parity</div>
+                            <div class="feature-stat-value">12/31</div>
+                            <div class="feature-stat-label">Android Parity</div>
                         </div>
                         <div class="feature-stat">
-                            <div class="feature-stat-value">50%</div>
-                            <div class="feature-stat-label">Faster Releases</div>
+                            <div class="feature-stat-value">2/13</div>
+                            <div class="feature-stat-label">iOS Parity</div>
                         </div>
                     </div>
                 </div>
@@ -2789,14 +2706,452 @@
         </div>
     </section>
 
-    <!-- Device Checkout Section -->
+    <!-- AI Auto Tagging Section -->
+    <section class="section section-ai-tagging" id="ai-tagging" data-section-index="3">
+        <div class="section-container">
+            <div class="feature-grid reverse">
+                <div class="feature-content">
+                    <div class="section-header">
+                        <div class="section-label">Strong Adoption</div>
+                        <h2 class="section-title">AI Auto Tagging</h2>
+                        <p class="section-desc">
+                            Both AI Auto-Tagging signals (Multicam and Transcript) are now live in the Axon App with strong adoption. In-app feedback shows 77% of users find the suggestions helpful.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-list">
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">60+ agencies actively using in Early Access</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">14K+ suggestions accepted monthly</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">In-app feedback capability generating valuable insights</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">41 of 53 feedback submissions rated suggestions as helpful</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-stats">
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">72%</div>
+                            <div class="feature-stat-label">Acceptance Rate</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">60+</div>
+                            <div class="feature-stat-label">Active Agencies</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-visual">
+                    <div class="visual-card">
+                        <div class="workflow-diagram" id="aiTaggingWorkflow">
+                            <div class="workflow-step">
+                                <div class="workflow-number">1</div>
+                                <div class="workflow-content">
+                                    <div class="workflow-title">Multicam Signal</div>
+                                    <div class="workflow-desc">AI identifies related camera footage automatically</div>
+                                </div>
+                            </div>
+                            <div class="workflow-step">
+                                <div class="workflow-number">2</div>
+                                <div class="workflow-content">
+                                    <div class="workflow-title">Transcript Signal</div>
+                                    <div class="workflow-desc">Speech-to-text enables searchable transcripts</div>
+                                </div>
+                            </div>
+                            <div class="workflow-step">
+                                <div class="workflow-number">3</div>
+                                <div class="workflow-content">
+                                    <div class="workflow-title">Tag Suggestions</div>
+                                    <div class="workflow-desc">AI recommends relevant tags for evidence</div>
+                                </div>
+                            </div>
+                            <div class="workflow-step">
+                                <div class="workflow-number">4</div>
+                                <div class="workflow-content">
+                                    <div class="workflow-title">User Feedback</div>
+                                    <div class="workflow-desc">In-app feedback improves AI accuracy over time</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offline Notes Section -->
     <section class="section section-device-checkout" id="device-checkout" data-section-index="4">
         <div class="section-container">
             <div class="feature-grid reverse">
                 <div class="feature-content">
                     <div class="section-header">
+                        <div class="section-label">Beta Testing</div>
+                        <h2 class="section-title">Offline Notes</h2>
+                        <p class="section-desc">
+                            Offline Mode beta testing is underway, enabling officers to create notes even without connectivity. On track to release offline note creation by 12/5.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-list">
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Beta testing with Barrie and Guelph agencies</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">6 additional agencies onboarded to expand beta</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Android QA complete with no critical bugs</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Moving to production testing to remove friction</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-stats">
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">12/5</div>
+                            <div class="feature-stat-label">Release Target</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">8</div>
+                            <div class="feature-stat-label">Beta Agencies</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-visual">
+                    <div class="visual-card">
+                        <div class="device-mockup">
+                            <div class="device-screen">
+                                <div class="device-header">
+                                    <span class="device-header-title">Axon App — Offline Notes</span>
+                                    <div class="device-status-bar">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="device-content">
+                                    <div class="device-item">
+                                        <div class="device-item-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                <polyline points="14 2 14 8 20 8"/>
+                                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                            </svg>
+                                        </div>
+                                        <div class="device-item-text">
+                                            <div class="device-item-title">Traffic Stop Note</div>
+                                            <div class="device-item-desc">Created offline • Pending sync</div>
+                                        </div>
+                                        <div class="device-item-badge" style="background: rgba(255, 149, 0, 0.15); color: var(--axon-accent);">Offline</div>
+                                    </div>
+                                    <div class="device-item">
+                                        <div class="device-item-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                <polyline points="14 2 14 8 20 8"/>
+                                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                            </svg>
+                                        </div>
+                                        <div class="device-item-text">
+                                            <div class="device-item-title">Incident Report</div>
+                                            <div class="device-item-desc">Synced successfully</div>
+                                        </div>
+                                        <div class="device-item-badge">Synced</div>
+                                    </div>
+                                    <div class="device-item">
+                                        <div class="device-item-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                <polyline points="14 2 14 8 20 8"/>
+                                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                            </svg>
+                                        </div>
+                                        <div class="device-item-text">
+                                            <div class="device-item-title">Field Interview</div>
+                                            <div class="device-item-desc">Synced successfully</div>
+                                        </div>
+                                        <div class="device-item-badge">Synced</div>
+                                    </div>
+                                    <div class="device-item">
+                                        <div class="device-item-icon" style="background: var(--axon-charcoal);">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="12" y1="2" x2="12" y2="6"/>
+                                                <line x1="12" y1="18" x2="12" y2="22"/>
+                                                <circle cx="12" cy="12" r="4"/>
+                                            </svg>
+                                        </div>
+                                        <div class="device-item-text">
+                                            <div class="device-item-title">Connection Status</div>
+                                            <div class="device-item-desc">Waiting for network...</div>
+                                        </div>
+                                        <div class="device-item-badge" style="background: rgba(255, 149, 0, 0.15); color: var(--axon-accent);">Offline</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases Section -->
+    <section class="section section-cases" id="cases" data-section-index="5">
+        <div class="section-container">
+            <div class="feature-grid">
+                <div class="feature-content">
+                    <div class="section-header">
+                        <div class="section-label">January 2026</div>
+                        <h2 class="section-title">Cases</h2>
+                        <p class="section-desc">
+                            Fast-Follow release targeting January 2026 (dev complete by year end). Expanding the Cases experience on mobile with major capabilities to support NYPD's migration from Axon View to Axon App.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-list">
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Case folders for better organization</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Auto share of newly added evidence</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Multi-cam related evidence search</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Enhanced internal access control</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-stats">
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">Jan '26</div>
+                            <div class="feature-stat-label">Target Release</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">NYPD</div>
+                            <div class="feature-stat-label">Key Customer</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-visual">
+                    <div class="visual-card">
+                        <div class="workflow-diagram">
+                            <div class="workflow-step">
+                                <div class="workflow-number">1</div>
+                                <div class="workflow-content">
+                                    <div class="workflow-title">Case Folders</div>
+                                    <div class="workflow-desc">Organize evidence into logical groupings</div>
+                                </div>
+                            </div>
+                            <div class="workflow-step">
+                                <div class="workflow-number">2</div>
+                                <div class="workflow-content">
+                                    <div class="workflow-title">Auto Share</div>
+                                    <div class="workflow-desc">New evidence automatically shared with case</div>
+                                </div>
+                            </div>
+                            <div class="workflow-step">
+                                <div class="workflow-number">3</div>
+                                <div class="workflow-content">
+                                    <div class="workflow-title">Multi-Cam Search</div>
+                                    <div class="workflow-desc">Find related footage across all cameras</div>
+                                </div>
+                            </div>
+                            <div class="workflow-step">
+                                <div class="workflow-number">4</div>
+                                <div class="workflow-content">
+                                    <div class="workflow-title">Access Control</div>
+                                    <div class="workflow-desc">Enhanced permissions and visibility rules</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-Signature Section -->
+    <section class="section section-esignature" id="e-signature" data-section-index="6">
+        <div class="section-container">
+            <div class="feature-grid reverse">
+                <div class="feature-content">
+                    <div class="section-header">
+                        <div class="section-label">2026 Roadmap</div>
+                        <h2 class="section-title">E-Signature</h2>
+                        <p class="section-desc">
+                            Feature teams planning integration in 2026. No longer a PBSO go-live blocker. Driving deadline is Q4 2026 for C&C launch.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-list">
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">RMS eSign no longer PBSO go-live blocker (Feb 2026)</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Q4 2026 deadline for C&C launch</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">RMS Mobile Safe Mode integration begins early 2026</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Feature teams planning full integration</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-stats">
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">Q4 '26</div>
+                            <div class="feature-stat-label">C&C Launch</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">Early '26</div>
+                            <div class="feature-stat-label">RMS Work Begins</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-visual">
+                    <div class="visual-card">
+                        <div class="workflow-diagram">
+                            <div class="workflow-step">
+                                <div class="workflow-number">1</div>
+                                <div class="workflow-content">
+                                    <div class="workflow-title">Early 2026</div>
+                                    <div class="workflow-desc">RMS Mobile Safe Mode feature work begins</div>
+                                </div>
+                            </div>
+                            <div class="workflow-step">
+                                <div class="workflow-number">2</div>
+                                <div class="workflow-content">
+                                    <div class="workflow-title">Feb 2026</div>
+                                    <div class="workflow-desc">PBSO launch (eSign not a blocker)</div>
+                                </div>
+                            </div>
+                            <div class="workflow-step">
+                                <div class="workflow-number">3</div>
+                                <div class="workflow-content">
+                                    <div class="workflow-title">Mid 2026</div>
+                                    <div class="workflow-desc">Feature integration development</div>
+                                </div>
+                            </div>
+                            <div class="workflow-step">
+                                <div class="workflow-number">4</div>
+                                <div class="workflow-content">
+                                    <div class="workflow-title">Q4 2026</div>
+                                    <div class="workflow-desc">C&C launch with full eSign support</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Device Checkout Section -->
+    <section class="section section-device-checkout-new" id="device-checkout-section" data-section-index="7">
+        <div class="section-container">
+            <div class="feature-grid">
+                <div class="feature-content">
+                    <div class="section-header">
                         <div class="section-label">Strategic Initiative</div>
-                        <h2 class="section-title">Device Checkout on Axon View</h2>
+                        <h2 class="section-title">Device Checkout</h2>
                         <p class="section-desc">
                             Streamlined device management enabling secure checkout workflows directly from Axon View — piloted successfully with Garda security operations.
                         </p>
@@ -2918,59 +3273,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Minor Features Section -->
-    <section class="section section-minor-features" id="more-features" data-section-index="5">
-        <div class="section-container">
-            <div class="section-header animate-on-scroll" style="text-align: center; max-width: 700px; margin: 0 auto 4rem;">
-                <div class="section-label" style="justify-content: center;">Supporting Improvements</div>
-                <h2 class="section-title">Additional Capabilities</h2>
-                <p class="section-desc" style="margin: 0 auto;">
-                    Beyond major features, we delivered key improvements that enhance daily workflows and expand functionality.
-                </p>
-            </div>
-            
-            <div class="minor-features-grid">
-                <div class="minor-feature-card">
-                    <div class="minor-feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                            <polyline points="14 2 14 8 20 8"/>
-                            <line x1="16" y1="13" x2="8" y2="13"/>
-                            <line x1="16" y1="17" x2="8" y2="17"/>
-                            <polyline points="10 9 9 9 8 9"/>
-                        </svg>
-                    </div>
-                    <h3 class="minor-feature-title">Offline Notes</h3>
-                    <p class="minor-feature-desc">
-                        Create and edit notes without network connectivity. Full synchronization when back online ensures no information is lost, even in remote locations or underground facilities.
-                    </p>
-                    <div class="capability-tags">
-                        <span class="capability-tag">Auto-Save</span>
-                        <span class="capability-tag">Sync Queue</span>
-                        <span class="capability-tag">Conflict Resolution</span>
-                    </div>
-                </div>
-                
-                <div class="minor-feature-card">
-                    <div class="minor-feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
-                        </svg>
-                    </div>
-                    <h3 class="minor-feature-title">E-Signature</h3>
-                    <p class="minor-feature-desc">
-                        Capture legally-binding electronic signatures directly within the app. Streamlines consent forms, witness statements, and other documentation requiring authentication.
-                    </p>
-                    <div class="capability-tags">
-                        <span class="capability-tag">Touch Capture</span>
-                        <span class="capability-tag">Timestamp</span>
-                        <span class="capability-tag">Chain of Custody</span>
                     </div>
                 </div>
             </div>
@@ -3117,7 +3419,7 @@
 
         // Scroll for navigation links (horizontal carousel)
         // Use instant scroll for distant sections, fast smooth for adjacent
-        const sectionOrder = ['hero', 'smart-capture', 'ai-tagging', 'capture-parity', 'device-checkout', 'more-features'];
+        const sectionOrder = ['hero', 'smart-capture', 'capture-parity', 'ai-tagging', 'device-checkout', 'cases', 'e-signature', 'device-checkout-section'];
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -3203,7 +3505,7 @@
             const navNext = document.getElementById('navNext');
             const dots = document.querySelectorAll('.swipe-nav-dot');
             const allSections = wrapper.querySelectorAll('[data-section-index]');
-            const sectionIds = ['hero', 'smart-capture', 'ai-tagging', 'capture-parity', 'device-checkout', 'more-features'];
+            const sectionIds = ['hero', 'smart-capture', 'capture-parity', 'ai-tagging', 'device-checkout', 'cases', 'e-signature', 'device-checkout-section'];
             
             let currentIndex = 0;
             let scrollTimeout = null;
