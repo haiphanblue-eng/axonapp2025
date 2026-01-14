@@ -486,6 +486,8 @@
             border-radius: 12px;
             transition: all 0.3s ease;
             cursor: pointer;
+            text-decoration: none;
+            color: inherit;
         }
 
         .rating-card:hover {
@@ -673,6 +675,22 @@
             background: linear-gradient(135deg, #111111 0%, var(--axon-black) 100%);
         }
 
+
+        .section-capture .capture-screenshot {
+            width: 320px;
+        }
+
+        @media (max-width: 1024px) {
+            .section-capture .capture-screenshot {
+                width: 260px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-capture .capture-screenshot {
+                width: 220px;
+            }
+        }
 
         .section-ai-tagging .capture-screenshot {
             width: 320px;
@@ -867,9 +885,20 @@
             background: linear-gradient(135deg, #111111 0%, var(--axon-black) 100%);
         }
 
+        .section-esignature .capture-screenshot {
+            width: 320px;
+        }
 
-        .section-device-checkout-new {
-            background: linear-gradient(135deg, var(--axon-black) 0%, #0D0D0D 100%);
+        @media (max-width: 1024px) {
+            .section-esignature .capture-screenshot {
+                width: 260px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-esignature .capture-screenshot {
+                width: 220px;
+            }
         }
 
 
@@ -935,8 +964,8 @@
         .feature-stats {
             display: flex;
             gap: 2rem;
-            margin-top: 2.5rem;
-            padding-top: 2.5rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -982,116 +1011,6 @@
             right: 0;
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-        }
-
-        /* Device Mockup */
-        .device-mockup {
-            background: #0D1520;
-            border-radius: 20px;
-            padding: 1rem;
-            position: relative;
-        }
-
-        .device-screen {
-            background: linear-gradient(145deg, #1a2a40 0%, #0d1825 100%);
-            border-radius: 12px;
-            aspect-ratio: 9/16;
-            max-height: 500px;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .device-header {
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .device-header-title {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--axon-white);
-        }
-
-        .device-status-bar {
-            display: flex;
-            gap: 0.25rem;
-        }
-
-        .device-status-bar span {
-            width: 16px;
-            height: 8px;
-            background: var(--axon-yellow);
-            border-radius: 2px;
-            opacity: 0.5;
-        }
-
-        .device-status-bar span:last-child {
-            opacity: 1;
-        }
-
-        .device-content {
-            flex: 1;
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .device-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            padding: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .device-item-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--axon-yellow);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .device-item-icon svg {
-            color: var(--axon-black);
-        }
-
-        .device-item-icon svg.custom {
-            width: 20px;
-            height: 20px;
-        }
-
-        .device-item-text {
-            flex: 1;
-        }
-
-        .device-item-title {
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 0.125rem;
-        }
-
-        .device-item-desc {
-            font-size: 0.625rem;
-            color: var(--axon-gray);
-        }
-
-        .device-item-badge {
-            padding: 0.25rem 0.5rem;
-            background: rgba(255, 215, 0, 0.15);
-            color: var(--axon-yellow);
-            font-size: 0.625rem;
-            font-weight: 600;
-            border-radius: 4px;
         }
 
         /* Before/After Slider */
@@ -1425,8 +1344,8 @@
         .feature-list {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
+            gap: 0.75rem;
+            margin-top: 1rem;
         }
 
         .feature-list-item {
@@ -1968,37 +1887,6 @@
             .capability-tag {
                 padding: 0.25rem 0.5rem;
                 font-size: 0.625rem;
-            }
-            
-            .device-mockup {
-                padding: 0.75rem;
-            }
-            
-            .device-screen {
-                max-height: 400px;
-            }
-            
-            .device-item {
-                padding: 0.5rem;
-                gap: 0.5rem;
-            }
-            
-            .device-item-icon {
-                width: 32px;
-                height: 32px;
-            }
-            
-            .device-item-title {
-                font-size: 0.625rem;
-            }
-            
-            .device-item-desc {
-                font-size: 0.5rem;
-            }
-            
-            .device-item-badge {
-                font-size: 0.5rem;
-                padding: 0.125rem 0.375rem;
             }
             
             .minor-features-grid {
@@ -2675,7 +2563,6 @@
             <a href="#policy-chat" class="nav-link" data-section="policy-chat">Policy Chat</a>
             <a href="#device-checkout" class="nav-link" data-section="device-checkout">Offline Notes</a>
             <a href="#e-signature" class="nav-link" data-section="e-signature">E-Signature</a>
-            <a href="#device-checkout-section" class="nav-link" data-section="device-checkout-section">Device Checkout</a>
         </div>
     </nav>
 
@@ -2687,7 +2574,6 @@
         <a href="#policy-chat" class="mobile-nav-link" data-section="policy-chat">Policy Chat</a>
         <a href="#device-checkout" class="mobile-nav-link" data-section="device-checkout">Offline Notes</a>
         <a href="#e-signature" class="mobile-nav-link" data-section="e-signature">E-Signature</a>
-        <a href="#device-checkout-section" class="mobile-nav-link" data-section="device-checkout-section">Device Checkout</a>
     </div>
 
     <!-- Mobile Swipe Navigation -->
@@ -2761,7 +2647,7 @@
                         </div>
                     </div>
                     <div class="hero-ratings">
-                        <div class="rating-card">
+                        <a href="https://apps.apple.com/us/app/axon/id1662804571" target="_blank" rel="noopener noreferrer" class="rating-card">
                             <div class="rating-platform">
                                 <svg class="rating-icon" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
@@ -2775,8 +2661,8 @@
                                     <span class="stars-filled" style="width: 96%;">★★★★★</span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="rating-card">
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.axon.one&hl=en&pli=1" target="_blank" rel="noopener noreferrer" class="rating-card">
                             <div class="rating-platform">
                                 <svg class="rating-icon" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48C13.85 1.23 12.95 1 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z"/>
@@ -2790,7 +2676,7 @@
                                     <span class="stars-filled" style="width: 95.4%;">★★★★★</span>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                         <div class="rating-reviews">
                             <span class="reviews-count">1,300+</span>
                             <span class="reviews-label">Reviews</span>
@@ -2845,7 +2731,7 @@
                                             <polyline points="20,6 9,17 4,12" />
                                         </svg>
                                     </div>
-                                    <span class="feature-list-text">Rollout playbook in development</span>
+                                    <span class="feature-list-text">Rollout playbook & training video</span>
                                 </div>
                                 <div class="feature-list-item">
                                     <div class="feature-list-icon">
@@ -2853,15 +2739,7 @@
                                             <polyline points="20,6 9,17 4,12" />
                                         </svg>
                                     </div>
-                                    <span class="feature-list-text">Training video in progress</span>
-                                </div>
-                                <div class="feature-list-item">
-                                    <div class="feature-list-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <polyline points="20,6 9,17 4,12" />
-                                        </svg>
-                                    </div>
-                                    <span class="feature-list-text">In-app walkthroughs Q1 2026</span>
+                                    <span class="feature-list-text">In-app walkthroughs coming Q1 '26</span>
                                 </div>
                             </div>
                             <div class="feature-stats">
@@ -2889,7 +2767,7 @@
                                             <polyline points="20,6 9,17 4,12" />
                                         </svg>
                                     </div>
-                                    <span class="feature-list-text">Android Photo, Video, Audio GA</span>
+                                    <span class="feature-list-text">Android parity complete (Photo, Video, Audio)</span>
                                 </div>
                                 <div class="feature-list-item">
                                     <div class="feature-list-icon">
@@ -2897,15 +2775,7 @@
                                             <polyline points="20,6 9,17 4,12" />
                                         </svg>
                                     </div>
-                                    <span class="feature-list-text">iOS Photo Capture live</span>
-                                </div>
-                                <div class="feature-list-item">
-                                    <div class="feature-list-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <polyline points="20,6 9,17 4,12" />
-                                        </svg>
-                                    </div>
-                                    <span class="feature-list-text">iOS full parity Q1 2026</span>
+                                    <span class="feature-list-text">iOS Photo Capture live, full parity Q1 '26</span>
                                 </div>
                             </div>
                             <div class="feature-stats">
@@ -2939,11 +2809,11 @@
                         <h2 class="section-title">AI Auto Tagging</h2>
                     </div>
                     
-                    <p class="section-desc" style="margin-bottom: 1.5rem; color: var(--axon-light); font-size: 1.1rem; line-height: 1.6;">
+                    <p class="section-desc" style="margin-bottom: 1rem; color: var(--axon-light); font-size: 1.1rem; line-height: 1.6;">
                         AI-powered tagging that automatically identifies and suggests relevant metadata for evidence.
                     </p>
                     
-                    <div class="feature-list" style="margin-bottom: 1.5rem;">
+                    <div class="feature-list" style="margin-bottom: 1rem;">
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3019,11 +2889,11 @@
                         <h2 class="section-title">Policy Chat</h2>
                     </div>
                     
-                    <p class="section-desc" style="margin-bottom: 1.5rem; color: var(--axon-light); font-size: 1.1rem; line-height: 1.6;">
+                    <p class="section-desc" style="margin-bottom: 1rem; color: var(--axon-light); font-size: 1.1rem; line-height: 1.6;">
                         AI-powered policy assistance helping officers quickly find answers to procedural questions.
                     </p>
                     
-                    <div class="feature-list" style="margin-bottom: 1.5rem;">
+                    <div class="feature-list" style="margin-bottom: 1rem;">
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3083,11 +2953,11 @@
                         <h2 class="section-title">Offline Notes</h2>
                     </div>
                     
-                    <p class="section-desc" style="margin-bottom: 1.5rem; color: var(--axon-light); font-size: 1.1rem; line-height: 1.6;">
+                    <p class="section-desc" style="margin-bottom: 1rem; color: var(--axon-light); font-size: 1.1rem; line-height: 1.6;">
                         Enabling officers to create notes even without connectivity, with automatic sync when back online.
                     </p>
                     
-                    <div class="feature-list" style="margin-bottom: 1.5rem;">
+                    <div class="feature-list" style="margin-bottom: 1rem;">
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3140,24 +3010,29 @@
     <!-- E-Signature Section -->
     <section class="section section-esignature" id="e-signature" data-section-index="5">
         <div class="section-container">
-            <div class="feature-grid reverse">
-                <div class="feature-content">
-                    <div class="section-header">
+            <div class="capture-layout">
+                <div class="capture-screenshot-card">
+                    <img src="images/E-sig.png" alt="E-Signature screenshot showing arrest signature workflow" class="capture-screenshot">
+                </div>
+                
+                <div class="capture-content">
+                    <div class="capture-header">
                         <div class="section-label">2026 Roadmap</div>
                         <h2 class="section-title">E-Signature</h2>
-                        <p class="section-desc">
-                            Feature teams planning integration in 2026. No longer a PBSO go-live blocker. Driving deadline is Q4 2026 for C&C launch.
-                        </p>
                     </div>
                     
-                    <div class="feature-list">
+                    <p class="section-desc" style="margin-bottom: 1rem; color: var(--axon-light); font-size: 1.1rem; line-height: 1.6;">
+                        Feature teams planning integration in 2026. No longer a PBSO go-live blocker. Driving deadline is Q4 2026 for C&C launch.
+                    </p>
+                    
+                    <div class="feature-list" style="margin-bottom: 1rem;">
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="20,6 9,17 4,12" />
                                 </svg>
                             </div>
-                            <span class="feature-list-text">RMS eSign no longer PBSO go-live blocker (Feb 2026)</span>
+                            <span class="feature-list-text">RMS eSign no longer PBSO go-live blocker</span>
                         </div>
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
@@ -3165,7 +3040,7 @@
                                     <polyline points="20,6 9,17 4,12" />
                                 </svg>
                             </div>
-                            <span class="feature-list-text">Q4 2026 deadline for C&C launch</span>
+                            <span class="feature-list-text">RMS Mobile Safe Mode work begins early '26</span>
                         </div>
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
@@ -3173,15 +3048,7 @@
                                     <polyline points="20,6 9,17 4,12" />
                                 </svg>
                             </div>
-                            <span class="feature-list-text">RMS Mobile Safe Mode integration begins early 2026</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">Feature teams planning full integration</span>
+                            <span class="feature-list-text">Q4 2026 target for C&C launch</span>
                         </div>
                     </div>
                     
@@ -3191,179 +3058,8 @@
                             <div class="feature-stat-label">C&C Launch</div>
                         </div>
                         <div class="feature-stat">
-                            <div class="feature-stat-value">Early '26</div>
-                            <div class="feature-stat-label">RMS Work Begins</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="feature-visual">
-                    <div class="visual-card">
-                        <div class="workflow-diagram">
-                            <div class="workflow-step">
-                                <div class="workflow-number">1</div>
-                                <div class="workflow-content">
-                                    <div class="workflow-title">Early 2026</div>
-                                    <div class="workflow-desc">RMS Mobile Safe Mode feature work begins</div>
-                                </div>
-                            </div>
-                            <div class="workflow-step">
-                                <div class="workflow-number">2</div>
-                                <div class="workflow-content">
-                                    <div class="workflow-title">Feb 2026</div>
-                                    <div class="workflow-desc">PBSO launch (eSign not a blocker)</div>
-                                </div>
-                            </div>
-                            <div class="workflow-step">
-                                <div class="workflow-number">3</div>
-                                <div class="workflow-content">
-                                    <div class="workflow-title">Mid 2026</div>
-                                    <div class="workflow-desc">Feature integration development</div>
-                                </div>
-                            </div>
-                            <div class="workflow-step">
-                                <div class="workflow-number">4</div>
-                                <div class="workflow-content">
-                                    <div class="workflow-title">Q4 2026</div>
-                                    <div class="workflow-desc">C&C launch with full eSign support</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Device Checkout Section -->
-    <section class="section section-device-checkout-new" id="device-checkout-section" data-section-index="6">
-        <div class="section-container">
-            <div class="feature-grid">
-                <div class="feature-content">
-                    <div class="section-header">
-                        <div class="section-label">Strategic Initiative</div>
-                        <h2 class="section-title">Device Checkout</h2>
-                        <p class="section-desc">
-                            Streamlined device management enabling secure checkout workflows directly from Axon View — piloted successfully with Garda security operations.
-                        </p>
-                    </div>
-                    
-                    <div class="feature-list">
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">One-tap device checkout with officer authentication</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">Real-time device status and location tracking</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">Automated return reminders and compliance alerts</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">Full audit trail for accountability</span>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-stats">
-                        <div class="feature-stat">
-                            <div class="feature-stat-value">70%</div>
-                            <div class="feature-stat-label">Time Saved</div>
-                        </div>
-                        <div class="feature-stat">
-                            <div class="feature-stat-value">99.9%</div>
-                            <div class="feature-stat-label">Device Accountability</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="feature-visual">
-                    <div class="visual-card">
-                        <div class="device-mockup">
-                            <div class="device-screen">
-                                <div class="device-header">
-                                    <span class="device-header-title">Axon View — Device Checkout</span>
-                                    <div class="device-status-bar">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="device-content">
-                                    <div class="device-item">
-                                        <div class="device-item-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-                                                <line x1="12" y1="18" x2="12" y2="18"/>
-                                            </svg>
-                                        </div>
-                                        <div class="device-item-text">
-                                            <div class="device-item-title">BWC-4521</div>
-                                            <div class="device-item-desc">Body Camera • Full Battery</div>
-                                        </div>
-                                        <div class="device-item-badge">Available</div>
-                                    </div>
-                                    <div class="device-item">
-                                        <div class="device-item-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-                                                <line x1="12" y1="18" x2="12" y2="18"/>
-                                            </svg>
-                                        </div>
-                                        <div class="device-item-text">
-                                            <div class="device-item-title">BWC-4522</div>
-                                            <div class="device-item-desc">Body Camera • 85% Battery</div>
-                                        </div>
-                                        <div class="device-item-badge">Available</div>
-                                    </div>
-                                    <div class="device-item">
-                                        <div class="device-item-icon" style="background: var(--axon-charcoal);">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-                                                <line x1="12" y1="18" x2="12" y2="18"/>
-                                            </svg>
-                                        </div>
-                                        <div class="device-item-text">
-                                            <div class="device-item-title">BWC-4523</div>
-                                            <div class="device-item-desc">Body Camera • Checked Out</div>
-                                        </div>
-                                        <div class="device-item-badge" style="background: rgba(255, 149, 0, 0.15); color: var(--axon-accent);">In Use</div>
-                                    </div>
-                                    <div class="device-item">
-                                        <div class="device-item-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                                                <line x1="8" y1="21" x2="16" y2="21"/>
-                                                <line x1="12" y1="17" x2="12" y2="21"/>
-                                            </svg>
-                                        </div>
-                                        <div class="device-item-text">
-                                            <div class="device-item-title">VEH-CAM-201</div>
-                                            <div class="device-item-desc">In-Car System • Full Battery</div>
-                                        </div>
-                                        <div class="device-item-badge">Available</div>
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="feature-stat-value">Feb '26</div>
+                            <div class="feature-stat-label">PBSO Go-Live</div>
                         </div>
                     </div>
                 </div>
@@ -3511,7 +3207,7 @@
 
         // Scroll for navigation links (horizontal carousel)
         // Use instant scroll for distant sections, fast smooth for adjacent
-        const sectionOrder = ['hero', 'capture', 'ai-tagging', 'policy-chat', 'device-checkout', 'e-signature', 'device-checkout-section'];
+        const sectionOrder = ['hero', 'capture', 'ai-tagging', 'policy-chat', 'device-checkout', 'e-signature'];
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -3597,7 +3293,7 @@
             const navNext = document.getElementById('navNext');
             const dots = document.querySelectorAll('.swipe-nav-dot');
             const allSections = wrapper.querySelectorAll('[data-section-index]');
-            const sectionIds = ['hero', 'capture', 'ai-tagging', 'policy-chat', 'device-checkout', 'e-signature', 'device-checkout-section'];
+            const sectionIds = ['hero', 'capture', 'ai-tagging', 'policy-chat', 'device-checkout', 'e-signature'];
             
             let currentIndex = 0;
             let scrollTimeout = null;
