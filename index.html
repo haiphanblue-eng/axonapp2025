@@ -484,6 +484,15 @@
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 215, 0, 0.2);
             border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .rating-card:hover {
+            background: rgba(255, 215, 0, 0.08);
+            border-color: rgba(255, 215, 0, 0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.15);
         }
 
         .rating-platform {
@@ -491,7 +500,7 @@
             align-items: center;
             gap: 0.5rem;
             font-size: 0.875rem;
-            color: var(--axon-gray);
+            color: white;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
@@ -499,7 +508,7 @@
         .rating-icon {
             width: 1.25rem;
             height: 1.25rem;
-            color: var(--axon-yellow);
+            color: white;
         }
 
         .rating-score {
@@ -613,6 +622,8 @@
             max-width: 1400px;
             margin: 0 auto;
             width: 100%;
+            position: relative;
+            z-index: 1;
         }
 
         .section-header {
@@ -654,7 +665,7 @@
         }
 
         /* Feature Section Backgrounds */
-        .section-smart-capture {
+        .section-capture {
             background: linear-gradient(135deg, var(--axon-black) 0%, #111111 100%);
         }
 
@@ -662,25 +673,205 @@
             background: linear-gradient(135deg, #111111 0%, var(--axon-black) 100%);
         }
 
-        .section-capture-parity {
+
+        .section-ai-tagging .capture-screenshot {
+            width: 320px;
+        }
+
+        @media (max-width: 1024px) {
+            .section-ai-tagging .capture-screenshot {
+                width: 260px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-ai-tagging .capture-screenshot {
+                width: 220px;
+            }
+        }
+
+        .capture-layout {
+            display: flex;
+            align-items: flex-start;
+            gap: 3rem;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .capture-screenshot-card {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        .capture-screenshot {
+            width: 240px;
+            height: auto;
+            border-radius: 0;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 80px rgba(255, 215, 0, 0.1);
+        }
+
+        .capture-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .capture-header {
+            margin-bottom: 0.5rem;
+        }
+
+        .capture-header .section-title {
+            margin-bottom: 0;
+        }
+
+        .capture-subsections {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .capture-subsection {
+            padding: 1.25rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        .capture-subsection-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--axon-yellow);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .capture-subsection-title svg {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .capture-subsection .feature-list {
+            margin-bottom: 0.75rem;
+        }
+
+        .capture-subsection .feature-list-item {
+            padding: 0.4rem 0;
+        }
+
+        .capture-subsection .feature-list-text {
+            font-size: 0.95rem;
+        }
+
+        .capture-subsection .feature-stats {
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+            gap: 1.5rem;
+        }
+
+        .capture-subsection .feature-stat-value {
+            font-size: 1.75rem;
+        }
+
+        .capture-subsection .feature-stat-label {
+            font-size: 0.65rem;
+        }
+
+        @media (max-width: 1024px) {
+            .capture-layout {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+
+            .capture-screenshot {
+                width: 180px;
+            }
+
+            .capture-subsections {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .capture-screenshot {
+                width: 160px;
+            }
+
+            .capture-subsection {
+                padding: 1rem;
+            }
+
+            .capture-subsection-title {
+                font-size: 1rem;
+            }
+
+            .capture-subsection .feature-list-text {
+                font-size: 0.875rem;
+            }
+        }
+
+        .section-policy-chat {
             background: linear-gradient(135deg, var(--axon-black) 0%, #0D0D0D 100%);
+        }
+
+
+        .section-policy-chat .capture-screenshot {
+            width: 320px;
+        }
+
+        @media (max-width: 1024px) {
+            .section-policy-chat .capture-screenshot {
+                width: 260px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-policy-chat .capture-screenshot {
+                width: 220px;
+            }
         }
 
         .section-device-checkout {
             background: linear-gradient(135deg, #0D0D0D 0%, var(--axon-black) 100%);
         }
 
-        .section-cases {
-            background: linear-gradient(135deg, var(--axon-black) 0%, #111111 100%);
+
+        .section-device-checkout .capture-screenshot {
+            width: 320px;
         }
+
+        @media (max-width: 1024px) {
+            .section-device-checkout .capture-screenshot {
+                width: 260px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-device-checkout .capture-screenshot {
+                width: 220px;
+            }
+        }
+
 
         .section-esignature {
             background: linear-gradient(135deg, #111111 0%, var(--axon-black) 100%);
         }
 
+
         .section-device-checkout-new {
             background: linear-gradient(135deg, var(--axon-black) 0%, #0D0D0D 100%);
         }
+
 
         .section-minor-features {
             background: var(--axon-black);
@@ -2479,11 +2670,10 @@
         </div>
         <div class="nav-links">
             <a href="#hero" class="nav-link active" data-section="hero">Home</a>
-            <a href="#smart-capture" class="nav-link" data-section="smart-capture">Smart Capture</a>
-            <a href="#capture-parity" class="nav-link" data-section="capture-parity">Capture Parity</a>
+            <a href="#capture" class="nav-link" data-section="capture">Capture</a>
             <a href="#ai-tagging" class="nav-link" data-section="ai-tagging">AI Auto Tagging</a>
+            <a href="#policy-chat" class="nav-link" data-section="policy-chat">Policy Chat</a>
             <a href="#device-checkout" class="nav-link" data-section="device-checkout">Offline Notes</a>
-            <a href="#cases" class="nav-link" data-section="cases">Cases</a>
             <a href="#e-signature" class="nav-link" data-section="e-signature">E-Signature</a>
             <a href="#device-checkout-section" class="nav-link" data-section="device-checkout-section">Device Checkout</a>
         </div>
@@ -2492,11 +2682,10 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <a href="#hero" class="mobile-nav-link active" data-section="hero">Home</a>
-        <a href="#smart-capture" class="mobile-nav-link" data-section="smart-capture">Smart Capture</a>
-        <a href="#capture-parity" class="mobile-nav-link" data-section="capture-parity">Capture Parity</a>
+        <a href="#capture" class="mobile-nav-link" data-section="capture">Capture</a>
         <a href="#ai-tagging" class="mobile-nav-link" data-section="ai-tagging">AI Auto Tagging</a>
+        <a href="#policy-chat" class="mobile-nav-link" data-section="policy-chat">Policy Chat</a>
         <a href="#device-checkout" class="mobile-nav-link" data-section="device-checkout">Offline Notes</a>
-        <a href="#cases" class="mobile-nav-link" data-section="cases">Cases</a>
         <a href="#e-signature" class="mobile-nav-link" data-section="e-signature">E-Signature</a>
         <a href="#device-checkout-section" class="mobile-nav-link" data-section="device-checkout-section">Device Checkout</a>
     </div>
@@ -2626,304 +2815,107 @@
         </div>
     </section>
 
-    <!-- Smart Capture Section -->
-    <section class="section section-smart-capture" id="smart-capture" data-section-index="1">
+    <!-- Capture Section -->
+    <section class="section section-capture" id="capture" data-section-index="1">
         <div class="section-container">
-            <div class="feature-grid">
-                <div class="feature-content">
-                    <div class="section-header">
-                        <div class="section-label">Adoption Update</div>
-                        <h2 class="section-title">Smart Capture</h2>
-                        <p class="section-desc">
-                            Early adoption phase as customers prioritize other AI Era products or await Fleet Dash integration. Building foundation for broader rollout in 2026.
-                        </p>
-                    </div>
-                    
-                    <div class="feature-list">
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">PM establishing Smart Capture playbook similar to D1 and Assistant</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">Creating customer-facing training video with eLearning team</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">Q1 '26: In-app walkthrough tooltips to increase discoverability</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">Customers transitioning from Capture App to Axon App</span>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-stats">
-                        <div class="feature-stat">
-                            <div class="feature-stat-value">Q1 '26</div>
-                            <div class="feature-stat-label">Tooltips Launch</div>
-                        </div>
-                        <div class="feature-stat">
-                            <div class="feature-stat-value">12</div>
-                            <div class="feature-stat-label">Customers Contacted</div>
-                        </div>
-                    </div>
+            <div class="capture-layout">
+                <div class="capture-screenshot-card">
+                    <img src="images/capture.png" alt="Capture screenshot showing ID scanning feature" class="capture-screenshot">
                 </div>
                 
-                <div class="feature-visual">
-                    <div class="visual-card">
-                        <div class="comparison-slider" id="smartCaptureSlider">
-                            <div class="comparison-after">
-                                <span class="comparison-label">Smart Capture</span>
-                                <div class="comparison-content">
-                                    <div class="comparison-item">
-                                        <div class="comparison-item-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                                <polyline points="22,4 12,14.01 9,11.01" />
-                                            </svg>
-                                        </div>
-                                        <span class="comparison-item-text">Auto-detected License Plate</span>
-                                    </div>
-                                    <div class="comparison-item">
-                                        <div class="comparison-item-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                                <polyline points="22,4 12,14.01 9,11.01" />
-                                            </svg>
-                                        </div>
-                                        <span class="comparison-item-text">Enhanced & Stabilized</span>
-                                    </div>
-                                    <div class="comparison-item">
-                                        <div class="comparison-item-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                                <polyline points="22,4 12,14.01 9,11.01" />
-                                            </svg>
-                                        </div>
-                                        <span class="comparison-item-text">Metadata Auto-Applied</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="comparison-before">
-                                <span class="comparison-label">Manual Capture</span>
-                                <div class="comparison-content">
-                                    <div class="comparison-item">
-                                        <div class="comparison-item-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <circle cx="12" cy="12" r="10" />
-                                                <line x1="15" y1="9" x2="9" y2="15" />
-                                                <line x1="9" y1="9" x2="15" y2="15" />
-                                            </svg>
-                                        </div>
-                                        <span class="comparison-item-text">Manual Classification</span>
-                                    </div>
-                                    <div class="comparison-item">
-                                        <div class="comparison-item-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <circle cx="12" cy="12" r="10" />
-                                                <line x1="15" y1="9" x2="9" y2="15" />
-                                                <line x1="9" y1="9" x2="15" y2="15" />
-                                            </svg>
-                                        </div>
-                                        <span class="comparison-item-text">Post-Processing Required</span>
-                                    </div>
-                                    <div class="comparison-item">
-                                        <div class="comparison-item-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <circle cx="12" cy="12" r="10" />
-                                                <line x1="15" y1="9" x2="9" y2="15" />
-                                                <line x1="9" y1="9" x2="15" y2="15" />
-                                            </svg>
-                                        </div>
-                                        <span class="comparison-item-text">Manual Tagging</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="comparison-handle"></div>
-                        </div>
-                        <div class="slider-control">
-                            <span class="slider-label">Drag to Compare</span>
-                            <input type="range" class="slider-input" id="smartCaptureControl" min="0" max="100" value="50">
-                            <span class="slider-value" id="smartCaptureValue">50%</span>
-                        </div>
+                <div class="capture-content">
+                    <div class="capture-header">
+                        <div class="section-label">Platform Progress</div>
+                        <h2 class="section-title">Capture</h2>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    
+                    <div class="capture-subsections">
+                        <!-- Smart Capture Sub-section -->
+                        <div class="capture-subsection">
+                            <h3 class="capture-subsection-title">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                                Smart Capture
+                            </h3>
+                            <div class="feature-list">
+                                <div class="feature-list-item">
+                                    <div class="feature-list-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="20,6 9,17 4,12" />
+                                        </svg>
+                                    </div>
+                                    <span class="feature-list-text">Rollout playbook in development</span>
+                                </div>
+                                <div class="feature-list-item">
+                                    <div class="feature-list-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="20,6 9,17 4,12" />
+                                        </svg>
+                                    </div>
+                                    <span class="feature-list-text">Training video in progress</span>
+                                </div>
+                                <div class="feature-list-item">
+                                    <div class="feature-list-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="20,6 9,17 4,12" />
+                                        </svg>
+                                    </div>
+                                    <span class="feature-list-text">In-app walkthroughs Q1 2026</span>
+                                </div>
+                            </div>
+                            <div class="feature-stats">
+                                <div class="feature-stat">
+                                    <div class="feature-stat-value">Q1 '26</div>
+                                    <div class="feature-stat-label">Enablement Launch</div>
+                                </div>
+                            </div>
+                        </div>
 
-    <!-- Capture Parity Section -->
-    <section class="section section-capture-parity" id="capture-parity" data-section-index="2">
-        <div class="section-container">
-            <div class="feature-grid">
-                <div class="feature-content">
-                    <div class="section-header">
-                        <div class="section-label">Platform Milestone</div>
-                        <h2 class="section-title">Capture Parity</h2>
-                        <p class="section-desc">
-                            On track to deliver 100% of Capture functionality in the Axon App. Android parity completes by 12/31, iOS full parity scheduled for 2/13/2026.
-                        </p>
-                    </div>
-                    
-                    <div class="feature-list">
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
+                        <!-- Capture Parity Sub-section -->
+                        <div class="capture-subsection">
+                            <h3 class="capture-subsection-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                    <line x1="8" y1="21" x2="16" y2="21"/>
+                                    <line x1="12" y1="17" x2="12" y2="21"/>
                                 </svg>
-                            </div>
-                            <span class="feature-list-text">Photo Capture live on both platforms behind feature flags</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">Android 2.0.0 (early Dec) will GA Photo, Video, and Audio capture</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">Android 100% Capture parity complete by 12/31</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">iOS parity scheduled 2/13/2026 (NCIC prioritized earlier)</span>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-stats">
-                        <div class="feature-stat">
-                            <div class="feature-stat-value">12/31</div>
-                            <div class="feature-stat-label">Android Parity</div>
-                        </div>
-                        <div class="feature-stat">
-                            <div class="feature-stat-value">2/13</div>
-                            <div class="feature-stat-label">iOS Parity</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="feature-visual">
-                    <div class="visual-card">
-                        <div class="platform-comparison">
-                            <div class="platform-card">
-                                <div class="platform-logo">
-                                    <svg viewBox="0 0 48 48" fill="none">
-                                        <path d="M24 4C13 4 4 13 4 24s9 20 20 20 20-9 20-20S35 4 24 4z" fill="url(#iosGrad)"/>
-                                        <path d="M24 12a12 12 0 100 24 12 12 0 000-24zm0 18a6 6 0 110-12 6 6 0 010 12z" fill="#0A0A0A"/>
-                                        <defs>
-                                            <linearGradient id="iosGrad" x1="4" y1="4" x2="44" y2="44">
-                                                <stop stop-color="#FFD700"/>
-                                                <stop offset="1" stop-color="#FFC107"/>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
+                                Capture Parity
+                            </h3>
+                            <div class="feature-list">
+                                <div class="feature-list-item">
+                                    <div class="feature-list-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="20,6 9,17 4,12" />
+                                        </svg>
+                                    </div>
+                                    <span class="feature-list-text">Android Photo, Video, Audio GA</span>
                                 </div>
-                                <div class="platform-name">iOS</div>
-                                <div class="platform-status">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="20,6 9,17 4,12"/>
-                                    </svg>
-                                    Full Support
+                                <div class="feature-list-item">
+                                    <div class="feature-list-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="20,6 9,17 4,12" />
+                                        </svg>
+                                    </div>
+                                    <span class="feature-list-text">iOS Photo Capture live</span>
+                                </div>
+                                <div class="feature-list-item">
+                                    <div class="feature-list-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="20,6 9,17 4,12" />
+                                        </svg>
+                                    </div>
+                                    <span class="feature-list-text">iOS full parity Q1 2026</span>
                                 </div>
                             </div>
-                            
-                            <div class="platform-connector">
-                                <div class="platform-connector-line"></div>
-                                <div class="platform-connector-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #0A0A0A;">
-                                        <path d="M8 7l4-4 4 4M8 17l4 4 4-4M12 3v18"/>
-                                    </svg>
+                            <div class="feature-stats">
+                                <div class="feature-stat">
+                                    <div class="feature-stat-value">100%</div>
+                                    <div class="feature-stat-label">Android</div>
                                 </div>
-                                <div class="platform-connector-text">Full Parity</div>
-                            </div>
-                            
-                            <div class="platform-card">
-                                <div class="platform-logo">
-                                    <svg viewBox="0 0 48 48" fill="none">
-                                        <rect x="4" y="8" width="40" height="32" rx="4" fill="url(#androidGrad)"/>
-                                        <rect x="12" y="16" width="24" height="16" rx="2" fill="#0A0A0A"/>
-                                        <circle cx="18" cy="24" r="3" fill="#FFD700"/>
-                                        <circle cx="30" cy="24" r="3" fill="#FFD700"/>
-                                        <defs>
-                                            <linearGradient id="androidGrad" x1="4" y1="8" x2="44" y2="40">
-                                                <stop stop-color="#FFD700"/>
-                                                <stop offset="1" stop-color="#FFC107"/>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </div>
-                                <div class="platform-name">Android</div>
-                                <div class="platform-status">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="20,6 9,17 4,12"/>
-                                    </svg>
-                                    Full Support
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="progress-visual" id="parityProgress" style="margin-top: 2rem;">
-                            <div class="progress-item" style="--progress-value: 100%;">
-                                <div class="progress-header">
-                                    <span class="progress-label">Photo Capture</span>
-                                    <span class="progress-value">100%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill"></div>
-                                </div>
-                            </div>
-                            <div class="progress-item" style="--progress-value: 100%;">
-                                <div class="progress-header">
-                                    <span class="progress-label">Video Recording</span>
-                                    <span class="progress-value">100%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill"></div>
-                                </div>
-                            </div>
-                            <div class="progress-item" style="--progress-value: 100%;">
-                                <div class="progress-header">
-                                    <span class="progress-label">Audio Capture</span>
-                                    <span class="progress-value">100%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill"></div>
-                                </div>
-                            </div>
-                            <div class="progress-item" style="--progress-value: 100%;">
-                                <div class="progress-header">
-                                    <span class="progress-label">Document Scanning</span>
-                                    <span class="progress-value">100%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill"></div>
+                                <div class="feature-stat">
+                                    <div class="feature-stat-value">Q1 '26</div>
+                                    <div class="feature-stat-label">iOS</div>
                                 </div>
                             </div>
                         </div>
@@ -2934,26 +2926,31 @@
     </section>
 
     <!-- AI Auto Tagging Section -->
-    <section class="section section-ai-tagging" id="ai-tagging" data-section-index="3">
+    <section class="section section-ai-tagging" id="ai-tagging" data-section-index="2">
         <div class="section-container">
-            <div class="feature-grid reverse">
-                <div class="feature-content">
-                    <div class="section-header">
+            <div class="capture-layout">
+                <div class="capture-screenshot-card">
+                    <img src="images/auto-tagging.png" alt="AI Auto Tagging screenshot showing evidence tagging" class="capture-screenshot">
+                </div>
+                
+                <div class="capture-content">
+                    <div class="capture-header">
                         <div class="section-label">Strong Adoption</div>
                         <h2 class="section-title">AI Auto Tagging</h2>
-                        <p class="section-desc">
-                            Both AI Auto-Tagging signals (Multicam and Transcript) are now live in the Axon App with strong adoption. In-app feedback shows 77% of users find the suggestions helpful.
-                        </p>
                     </div>
                     
-                    <div class="feature-list">
+                    <p class="section-desc" style="margin-bottom: 1.5rem; color: var(--axon-light); font-size: 1.1rem; line-height: 1.6;">
+                        AI-powered tagging that automatically identifies and suggests relevant metadata for evidence.
+                    </p>
+                    
+                    <div class="feature-list" style="margin-bottom: 1.5rem;">
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="20,6 9,17 4,12" />
                                 </svg>
                             </div>
-                            <span class="feature-list-text">60+ agencies actively using in Early Access</span>
+                            <span class="feature-list-text">16K+ suggestions accepted monthly</span>
                         </div>
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
@@ -2961,7 +2958,7 @@
                                     <polyline points="20,6 9,17 4,12" />
                                 </svg>
                             </div>
-                            <span class="feature-list-text">14K+ suggestions accepted monthly</span>
+                            <span class="feature-list-text">100K+ suggestions since Early Access (Aug)</span>
                         </div>
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
@@ -2969,7 +2966,7 @@
                                     <polyline points="20,6 9,17 4,12" />
                                 </svg>
                             </div>
-                            <span class="feature-list-text">In-app feedback capability generating valuable insights</span>
+                            <span class="feature-list-text">72K+ accepted (72% acceptance rate)</span>
                         </div>
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
@@ -2977,55 +2974,95 @@
                                     <polyline points="20,6 9,17 4,12" />
                                 </svg>
                             </div>
-                            <span class="feature-list-text">41 of 53 feedback submissions rated suggestions as helpful</span>
+                            <span class="feature-list-text">97% users find suggestions helpful (677/697)</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">280 hours saved</span>
                         </div>
                     </div>
                     
                     <div class="feature-stats">
                         <div class="feature-stat">
+                            <div class="feature-stat-value">16K+</div>
+                            <div class="feature-stat-label">Monthly Accepted</div>
+                        </div>
+                        <div class="feature-stat">
                             <div class="feature-stat-value">72%</div>
                             <div class="feature-stat-label">Acceptance Rate</div>
                         </div>
                         <div class="feature-stat">
-                            <div class="feature-stat-value">60+</div>
-                            <div class="feature-stat-label">Active Agencies</div>
+                            <div class="feature-stat-value">97%</div>
+                            <div class="feature-stat-label">Find Helpful</div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policy Chat Section -->
+    <section class="section section-policy-chat" id="policy-chat" data-section-index="3">
+        <div class="section-container">
+            <div class="capture-layout">
+                <div class="capture-screenshot-card">
+                    <img src="images/policy-chat.png" alt="Policy Chat screenshot showing AI-powered policy assistance" class="capture-screenshot">
+                </div>
                 
-                <div class="feature-visual">
-                    <div class="visual-card">
-                        <div class="workflow-diagram" id="aiTaggingWorkflow">
-                            <div class="workflow-step">
-                                <div class="workflow-number">1</div>
-                                <div class="workflow-content">
-                                    <div class="workflow-title">Multicam Signal</div>
-                                    <div class="workflow-desc">AI identifies related camera footage automatically</div>
-                                </div>
+                <div class="capture-content">
+                    <div class="capture-header">
+                        <div class="section-label">Strong Engagement</div>
+                        <h2 class="section-title">Policy Chat</h2>
+                    </div>
+                    
+                    <p class="section-desc" style="margin-bottom: 1.5rem; color: var(--axon-light); font-size: 1.1rem; line-height: 1.6;">
+                        AI-powered policy assistance helping officers quickly find answers to procedural questions.
+                    </p>
+                    
+                    <div class="feature-list" style="margin-bottom: 1.5rem;">
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
                             </div>
-                            <div class="workflow-step">
-                                <div class="workflow-number">2</div>
-                                <div class="workflow-content">
-                                    <div class="workflow-title">Transcript Signal</div>
-                                    <div class="workflow-desc">Speech-to-text enables searchable transcripts</div>
-                                </div>
-                            </div>
-                            <div class="workflow-step">
-                                <div class="workflow-number">3</div>
-                                <div class="workflow-content">
-                                    <div class="workflow-title">Tag Suggestions</div>
-                                    <div class="workflow-desc">AI recommends relevant tags for evidence</div>
-                                </div>
-                            </div>
-                            <div class="workflow-step">
-                                <div class="workflow-number">4</div>
-                                <div class="workflow-content">
-                                    <div class="workflow-title">User Feedback</div>
-                                    <div class="workflow-desc">In-app feedback improves AI accuracy over time</div>
-                                </div>
-                            </div>
+                            <span class="feature-list-text">75% of users ask 2+ questions per month</span>
                         </div>
-                        
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">Now GA across CA, UK, and AUS</span>
+                        </div>
+                        <div class="feature-list-item">
+                            <div class="feature-list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12" />
+                                </svg>
+                            </div>
+                            <span class="feature-list-text">First Canadian customer onboarding</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-stats">
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">2,300+</div>
+                            <div class="feature-stat-label">Total Users</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">942</div>
+                            <div class="feature-stat-label">MAU</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-value">75%</div>
+                            <div class="feature-stat-label">Engaged Users</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -3035,24 +3072,29 @@
     <!-- Offline Notes Section -->
     <section class="section section-device-checkout" id="device-checkout" data-section-index="4">
         <div class="section-container">
-            <div class="feature-grid reverse">
-                <div class="feature-content">
-                    <div class="section-header">
+            <div class="capture-layout">
+                <div class="capture-screenshot-card">
+                    <img src="images/offline-notes.png" alt="Offline Notes screenshot showing notes created while offline" class="capture-screenshot">
+                </div>
+                
+                <div class="capture-content">
+                    <div class="capture-header">
                         <div class="section-label">Beta Testing</div>
                         <h2 class="section-title">Offline Notes</h2>
-                        <p class="section-desc">
-                            Offline Mode beta testing is underway, enabling officers to create notes even without connectivity. On track to release offline note creation by 12/5.
-                        </p>
                     </div>
                     
-                    <div class="feature-list">
+                    <p class="section-desc" style="margin-bottom: 1.5rem; color: var(--axon-light); font-size: 1.1rem; line-height: 1.6;">
+                        Enabling officers to create notes even without connectivity, with automatic sync when back online.
+                    </p>
+                    
+                    <div class="feature-list" style="margin-bottom: 1.5rem;">
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="20,6 9,17 4,12" />
                                 </svg>
                             </div>
-                            <span class="feature-list-text">Beta testing with Barrie and Guelph agencies</span>
+                            <span class="feature-list-text">Live with Barrie and Guelph</span>
                         </div>
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
@@ -3060,7 +3102,7 @@
                                     <polyline points="20,6 9,17 4,12" />
                                 </svg>
                             </div>
-                            <span class="feature-list-text">6 additional agencies onboarded to expand beta</span>
+                            <span class="feature-list-text">6 additional agencies onboarded</span>
                         </div>
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
@@ -3068,7 +3110,7 @@
                                     <polyline points="20,6 9,17 4,12" />
                                 </svg>
                             </div>
-                            <span class="feature-list-text">Android QA complete with no critical bugs</span>
+                            <span class="feature-list-text">On track to ship by end of 2025</span>
                         </div>
                         <div class="feature-list-item">
                             <div class="feature-list-icon">
@@ -3076,196 +3118,19 @@
                                     <polyline points="20,6 9,17 4,12" />
                                 </svg>
                             </div>
-                            <span class="feature-list-text">Moving to production testing to remove friction</span>
+                            <span class="feature-list-text">Setting up for real-world field testing</span>
                         </div>
                     </div>
                     
                     <div class="feature-stats">
-                        <div class="feature-stat">
-                            <div class="feature-stat-value">12/5</div>
-                            <div class="feature-stat-label">Release Target</div>
-                        </div>
                         <div class="feature-stat">
                             <div class="feature-stat-value">8</div>
                             <div class="feature-stat-label">Beta Agencies</div>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="feature-visual">
-                    <div class="visual-card">
-                        <div class="device-mockup">
-                            <div class="device-screen">
-                                <div class="device-header">
-                                    <span class="device-header-title">Axon App — Offline Notes</span>
-                                    <div class="device-status-bar">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class="device-content">
-                                    <div class="device-item">
-                                        <div class="device-item-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                                <polyline points="14 2 14 8 20 8"/>
-                                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                                <line x1="16" y1="17" x2="8" y2="17"/>
-                                            </svg>
-                                        </div>
-                                        <div class="device-item-text">
-                                            <div class="device-item-title">Traffic Stop Note</div>
-                                            <div class="device-item-desc">Created offline • Pending sync</div>
-                                        </div>
-                                        <div class="device-item-badge" style="background: rgba(255, 149, 0, 0.15); color: var(--axon-accent);">Offline</div>
-                                    </div>
-                                    <div class="device-item">
-                                        <div class="device-item-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                                <polyline points="14 2 14 8 20 8"/>
-                                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                                <line x1="16" y1="17" x2="8" y2="17"/>
-                                            </svg>
-                                        </div>
-                                        <div class="device-item-text">
-                                            <div class="device-item-title">Incident Report</div>
-                                            <div class="device-item-desc">Synced successfully</div>
-                                        </div>
-                                        <div class="device-item-badge">Synced</div>
-                                    </div>
-                                    <div class="device-item">
-                                        <div class="device-item-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                                <polyline points="14 2 14 8 20 8"/>
-                                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                                <line x1="16" y1="17" x2="8" y2="17"/>
-                                            </svg>
-                                        </div>
-                                        <div class="device-item-text">
-                                            <div class="device-item-title">Field Interview</div>
-                                            <div class="device-item-desc">Synced successfully</div>
-                                        </div>
-                                        <div class="device-item-badge">Synced</div>
-                                    </div>
-                                    <div class="device-item">
-                                        <div class="device-item-icon" style="background: var(--axon-charcoal);">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <line x1="12" y1="2" x2="12" y2="6"/>
-                                                <line x1="12" y1="18" x2="12" y2="22"/>
-                                                <circle cx="12" cy="12" r="4"/>
-                                            </svg>
-                                        </div>
-                                        <div class="device-item-text">
-                                            <div class="device-item-title">Connection Status</div>
-                                            <div class="device-item-desc">Waiting for network...</div>
-                                        </div>
-                                        <div class="device-item-badge" style="background: rgba(255, 149, 0, 0.15); color: var(--axon-accent);">Offline</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cases Section -->
-    <section class="section section-cases" id="cases" data-section-index="5">
-        <div class="section-container">
-            <div class="feature-grid">
-                <div class="feature-content">
-                    <div class="section-header">
-                        <div class="section-label">January 2026</div>
-                        <h2 class="section-title">Cases</h2>
-                        <p class="section-desc">
-                            Fast-Follow release targeting January 2026 (dev complete by year end). Expanding the Cases experience on mobile with major capabilities to support NYPD's migration from Axon View to Axon App.
-                        </p>
-                    </div>
-                    
-                    <div class="feature-list">
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">Case folders for better organization</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">Auto share of newly added evidence</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">Multi-cam related evidence search</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <div class="feature-list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20,6 9,17 4,12" />
-                                </svg>
-                            </div>
-                            <span class="feature-list-text">Enhanced internal access control</span>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-stats">
                         <div class="feature-stat">
-                            <div class="feature-stat-value">Jan '26</div>
-                            <div class="feature-stat-label">Target Release</div>
+                            <div class="feature-stat-value">2025</div>
+                            <div class="feature-stat-label">Target Ship</div>
                         </div>
-                        <div class="feature-stat">
-                            <div class="feature-stat-value">NYPD</div>
-                            <div class="feature-stat-label">Key Customer</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="feature-visual">
-                    <div class="visual-card">
-                        <div class="workflow-diagram">
-                            <div class="workflow-step">
-                                <div class="workflow-number">1</div>
-                                <div class="workflow-content">
-                                    <div class="workflow-title">Case Folders</div>
-                                    <div class="workflow-desc">Organize evidence into logical groupings</div>
-                                </div>
-                            </div>
-                            <div class="workflow-step">
-                                <div class="workflow-number">2</div>
-                                <div class="workflow-content">
-                                    <div class="workflow-title">Auto Share</div>
-                                    <div class="workflow-desc">New evidence automatically shared with case</div>
-                                </div>
-                            </div>
-                            <div class="workflow-step">
-                                <div class="workflow-number">3</div>
-                                <div class="workflow-content">
-                                    <div class="workflow-title">Multi-Cam Search</div>
-                                    <div class="workflow-desc">Find related footage across all cameras</div>
-                                </div>
-                            </div>
-                            <div class="workflow-step">
-                                <div class="workflow-number">4</div>
-                                <div class="workflow-content">
-                                    <div class="workflow-title">Access Control</div>
-                                    <div class="workflow-desc">Enhanced permissions and visibility rules</div>
-                                </div>
-                            </div>
-                        </div>
-                        
                     </div>
                 </div>
             </div>
@@ -3273,7 +3138,7 @@
     </section>
 
     <!-- E-Signature Section -->
-    <section class="section section-esignature" id="e-signature" data-section-index="6">
+    <section class="section section-esignature" id="e-signature" data-section-index="5">
         <div class="section-container">
             <div class="feature-grid reverse">
                 <div class="feature-content">
@@ -3372,7 +3237,7 @@
     </section>
 
     <!-- Device Checkout Section -->
-    <section class="section section-device-checkout-new" id="device-checkout-section" data-section-index="7">
+    <section class="section section-device-checkout-new" id="device-checkout-section" data-section-index="6">
         <div class="section-container">
             <div class="feature-grid">
                 <div class="feature-content">
@@ -3646,7 +3511,7 @@
 
         // Scroll for navigation links (horizontal carousel)
         // Use instant scroll for distant sections, fast smooth for adjacent
-        const sectionOrder = ['hero', 'smart-capture', 'capture-parity', 'ai-tagging', 'device-checkout', 'cases', 'e-signature', 'device-checkout-section'];
+        const sectionOrder = ['hero', 'capture', 'ai-tagging', 'policy-chat', 'device-checkout', 'e-signature', 'device-checkout-section'];
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -3732,7 +3597,7 @@
             const navNext = document.getElementById('navNext');
             const dots = document.querySelectorAll('.swipe-nav-dot');
             const allSections = wrapper.querySelectorAll('[data-section-index]');
-            const sectionIds = ['hero', 'smart-capture', 'capture-parity', 'ai-tagging', 'device-checkout', 'cases', 'e-signature', 'device-checkout-section'];
+            const sectionIds = ['hero', 'capture', 'ai-tagging', 'policy-chat', 'device-checkout', 'e-signature', 'device-checkout-section'];
             
             let currentIndex = 0;
             let scrollTimeout = null;
