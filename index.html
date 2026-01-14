@@ -3662,34 +3662,63 @@
                 // Auto-rotate functionality (desktop only)
                 if (!isMobile) {
                     let autoRotateTimer = null;
+                    let isPaused = false;
                     const AUTO_ROTATE_DELAY = 5000; // 5 seconds
                     
                     function scheduleNextRotation() {
                         // Clear any existing timer
                         if (autoRotateTimer) {
                             clearTimeout(autoRotateTimer);
+                            autoRotateTimer = null;
                         }
-                        // Schedule next rotation
-                        autoRotateTimer = setTimeout(() => {
-                            goToSection(currentIndex + 1);
-                            scheduleNextRotation(); // Schedule the next one
-                        }, AUTO_ROTATE_DELAY);
+                        // Only schedule if not paused
+                        if (!isPaused) {
+                            autoRotateTimer = setTimeout(() => {
+                                if (!isPaused) {
+                                    goToSection(currentIndex + 1);
+                                    scheduleNextRotation(); // Schedule the next one
+                                }
+                            }, AUTO_ROTATE_DELAY);
+                        }
                     }
                     
-                    function resetAutoRotateTimer() {
-                        // Reset timer on any user interaction
+                    function pauseAutoRotate() {
+                        isPaused = true;
+                        if (autoRotateTimer) {
+                            clearTimeout(autoRotateTimer);
+                            autoRotateTimer = null;
+                        }
+                    }
+                    
+                    function resumeAutoRotate() {
+                        isPaused = false;
                         scheduleNextRotation();
                     }
                     
-                    // Reset timer on user interaction (but don't stop rotation)
-                    wrapper.addEventListener('click', resetAutoRotateTimer);
-                    wrapper.addEventListener('wheel', resetAutoRotateTimer, { passive: true });
-                    document.addEventListener('keydown', resetAutoRotateTimer);
+                    // Pause on hover
+                    wrapper.addEventListener('mouseenter', pauseAutoRotate);
+                    wrapper.addEventListener('mouseleave', resumeAutoRotate);
                     
-                    // Start auto-rotation after initial delay
-                    setTimeout(scheduleNextRotation, AUTO_ROTATE_DELAY);
+                    // Pause on click/interaction, resume after delay
+                    wrapper.addEventListener('click', () => {
+                        pauseAutoRotate();
+                        setTimeout(resumeAutoRotate, 5000);
+                    });
                     
-                    console.log('Auto-rotate initialized: switching every 5 seconds');
+                    wrapper.addEventListener('wheel', () => {
+                        pauseAutoRotate();
+                        setTimeout(resumeAutoRotate, 5000);
+                    }, { passive: true });
+                    
+                    document.addEventListener('keydown', (e) => {
+                        if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) {
+                            pauseAutoRotate();
+                            setTimeout(resumeAutoRotate, 5000);
+                        }
+                    });
+                    
+                    // Start auto-rotation
+                    scheduleNextRotation();
                 }
             }
             
